@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Index.aspx" title="Inicio"  description="">
+    <siteMapNode url="" title="Juegos" description="">
+      <siteMapNode url="~/ListarJuegos.aspx" title="Listar"  description="" />
+      <siteMapNode url="~/AgregarJuego.aspx" title="Nuevo"  description="" />
+      <siteMapNode url="~/ModificarJuego.aspx" title="Editar"  description="" />
+      <siteMapNode url="~/EliminarJuego.aspx" title="Eliminar"  description="" />
+    </siteMapNode>
+    <siteMapNode url="~/LoginForm.aspx" title="Cerrar Sesión" description="" />
+  </siteMapNode>
+</siteMap>

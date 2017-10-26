@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Este archivo almacena las cuentas por defecto del sistema -->
+<cuentas>
+  <cuenta id="admin" rol="">
+    <clave>08cff3e2e33327e411c64de3f5a53c1d57c60a16cff4e9cb523f2cc511c0c9e6</clave>
+    <nombre>Administrador de Sistema</nombre>
+  </cuenta>
+  <cuenta id="" rol="">
+    <clave></clave>
+    <nombre></nombre>
+  </cuenta>
+  <cuenta id="" rol="">
+    <clave></clave>
+    <nombre></nombre>
+  </cuenta>
+</cuentas>
