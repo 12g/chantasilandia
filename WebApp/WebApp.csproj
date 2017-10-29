@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -72,17 +75,15 @@
     <Content Include="Cuentas.xml" />
     <Content Include="EliminarJuego.aspx" />
     <Content Include="Index.aspx" />
-    <Content Include="ListarJuegos.aspx" />
+    <Content Include="ListarJuego.aspx" />
     <Content Include="ModificarJuego.aspx" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -128,12 +129,12 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListarJuegos.aspx.cs">
-      <DependentUpon>ListarJuegos.aspx</DependentUpon>
+    <Compile Include="ListarJuego.aspx.cs">
+      <DependentUpon>ListarJuego.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListarJuegos.aspx.designer.cs">
-      <DependentUpon>ListarJuegos.aspx</DependentUpon>
+    <Compile Include="ListarJuego.aspx.designer.cs">
+      <DependentUpon>ListarJuego.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.aspx.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
@@ -150,21 +151,14 @@
       <DependentUpon>ModificarJuego.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site1.Master.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site1.Master.designer.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BibliotecaClases\BibliotecaClases.csproj">
+    <ProjectReference Include="..\BibliotecaClases\Juegos.Negocio.csproj">
       <Project>{6b3fede4-1b14-4277-b05a-0bb7dd256f2d}</Project>
-      <Name>BibliotecaClases</Name>
+      <Name>Juegos.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

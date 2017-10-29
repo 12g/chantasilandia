@@ -8,8 +8,9 @@ using System.Web.UI.WebControls;
 
 namespace WebApp
 {
-    public partial class EliminarJuego1 : System.Web.UI.Page
+    public partial class EliminarJuego : System.Web.UI.Page
     {
+
         List<Juego> SessionJuego
         {
             get

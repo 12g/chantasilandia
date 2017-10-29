@@ -11,7 +11,7 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
         }
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace WebApp
     public partial class ModificarJuego : System.Web.UI.Page
     {
 
-        private List<Juego> ListaJuegos
+        private List<Juego> SessionJuego
         {
             get
             {
@@ -55,15 +55,15 @@ namespace WebApp
             j.Tipojuego = (TipoJuego)Enum.Parse(typeof(TipoJuego), this.ddlTipoJuego.SelectedValue);
             je.Riesgo1 = (NivelDeRiesgo)Enum.Parse(typeof(NivelDeRiesgo), this.ddlRiesgo.SelectedValue);
             j.Capacidad = int.Parse(txtCapacidad.Text);
-            jc.PoseeCinturon = chkPoseeCinuron.Checked;
+            jc.PoseeCinturon1 = chkPoseeCinuron.Checked;
             je.Altura = int.Parse(txtAltura.Text);
-            jc.RequiereSupervision = chkSupervision.Checked;
+            jc.RequiereSupervision1 = chkSupervision.Checked;
 
             string id = this.txtIdBsc.Text;
 
 
             int aux = 0;
-            foreach (Juego j1 in ListaJuegos)
+            foreach (Juego j1 in SessionJuego)
             {
                 aux++;
 
@@ -73,7 +73,7 @@ namespace WebApp
                 }
             }
 
-            ListaJuegos[aux] = j;
+            SessionJuego[aux] = j;
 
             lblMensaje.Text = "Juego Modificado";
         }
@@ -82,11 +82,10 @@ namespace WebApp
         {
             string id = this.txtIdBsc.Text;
 
-            foreach (Juego j1 in ListaJuegos)
+            foreach (Juego j1 in SessionJuego)
             {
-                if (j1.Id == id)
+                if ((j1.Id) == id)
                 {
-                    
                     this.txtId.Text = j1.Id;
                     this.txtNombre.Text = j1.Nombre;
 
@@ -101,21 +100,21 @@ namespace WebApp
                     JuegoCasual jc1 = new JuegoCasual();
 
 
-                    this.chkPoseeCinuron.Checked = jc1.PoseeCinturon;
-                    this.chkSupervision.Checked = jc1.RequiereSupervision;
+                    this.chkPoseeCinuron.Checked = jc1.PoseeCinturon1;
+                    this.chkSupervision.Checked = jc1.RequiereSupervision1;
 
 
 
                     JuegoExtremo je1 = new JuegoExtremo();
+                    
+                        this.txtAltura.Text = je1.Altura.ToString();
+                        if (je1.Riesgo1.ToString() == "Alto")
+                            this.ddlRiesgo.SelectedIndex = 0;
+                        else
+                            this.ddlRiesgo.SelectedIndex = 1;
 
-                    this.txtAltura.Text = je1.Altura.ToString();
-                    if (je1.Riesgo1.ToString() == "Alto")
-                        this.ddlRiesgo.SelectedIndex = 0;
-                    else
-                        this.ddlRiesgo.SelectedIndex = 1;
 
-
-                    lblMensaje.Text = "Datos cargados correctamente";
+                        lblMensaje.Text = "Datos cargados correctamente";
 
 
                 }

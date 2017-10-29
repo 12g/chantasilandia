@@ -19,17 +19,18 @@ namespace BibliotecaClases
         //,ServicioTecnico
     }
 
-    public enum TipoJuego
+   public enum TipoJuego
     {
         JuegoCasual,
         JuegoExtremo
 
     }
 
-    public enum NivelDeRiesgo
+   public enum NivelDeRiesgo
     {
         Alto,
         MuyAlto,
         Extremo
     }
+
 }

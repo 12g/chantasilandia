@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="cuentaID" />
+          </Key>
+          <Property Name="cuentaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cuentaUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cuentaPassword" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="empleadoID" />
+          </Key>
+          <Property Name="empleadoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empleadoNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="empleadoEdad" Type="smallint" Nullable="false" />
+          <Property Name="empleadoTrabajoID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Juegos">
+          <Key>
+            <PropertyRef Name="juegoID" />
+          </Key>
+          <Property Name="juegoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="juegoNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="juegoTipo" Type="tinyint" Nullable="false" />
+          <Property Name="juegoCasualPoseeCinturon" Type="tinyint" />
+          <Property Name="juegoCasualReqSupervision" Type="tinyint" />
+          <Property Name="juegoExtremoNivelRiesgo" Type="int" />
+          <Property Name="juegoExtremoAltura" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.MSreplication_options' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_db' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_dev' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_usg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ticketID" />
+          </Key>
+          <Property Name="ticketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ticketPrecio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Juegos" EntityType="Self.Juegos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="cuentaID" />
+          </Key>
+          <Property Name="cuentaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cuentaUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cuentaPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="empleadoID" />
+          </Key>
+          <Property Name="empleadoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empleadoNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empleadoEdad" Type="Int16" Nullable="false" />
+          <Property Name="empleadoTrabajoID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Juegos">
+          <Key>
+            <PropertyRef Name="juegoID" />
+          </Key>
+          <Property Name="juegoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="juegoNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="juegoTipo" Type="Byte" Nullable="false" />
+          <Property Name="juegoCasualPoseeCinturon" Type="Byte" />
+          <Property Name="juegoCasualReqSupervision" Type="Byte" />
+          <Property Name="juegoExtremoNivelRiesgo" Type="Int32" />
+          <Property Name="juegoExtremoAltura" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ticketID" />
+          </Key>
+          <Property Name="ticketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ticketPrecio" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Juegos" EntityType="Self.Juegos" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+          <EntitySetMapping Name="Cuentas">
+            <EntityTypeMapping TypeName="masterModel.Cuentas">
+              <MappingFragment StoreEntitySet="Cuentas">
+                <ScalarProperty Name="cuentaID" ColumnName="cuentaID" />
+                <ScalarProperty Name="cuentaUsuario" ColumnName="cuentaUsuario" />
+                <ScalarProperty Name="cuentaPassword" ColumnName="cuentaPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="masterModel.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="empleadoID" ColumnName="empleadoID" />
+                <ScalarProperty Name="empleadoNombre" ColumnName="empleadoNombre" />
+                <ScalarProperty Name="empleadoEdad" ColumnName="empleadoEdad" />
+                <ScalarProperty Name="empleadoTrabajoID" ColumnName="empleadoTrabajoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Juegos">
+            <EntityTypeMapping TypeName="masterModel.Juegos">
+              <MappingFragment StoreEntitySet="Juegos">
+                <ScalarProperty Name="juegoID" ColumnName="juegoID" />
+                <ScalarProperty Name="juegoNombre" ColumnName="juegoNombre" />
+                <ScalarProperty Name="juegoTipo" ColumnName="juegoTipo" />
+                <ScalarProperty Name="juegoCasualPoseeCinturon" ColumnName="juegoCasualPoseeCinturon" />
+                <ScalarProperty Name="juegoCasualReqSupervision" ColumnName="juegoCasualReqSupervision" />
+                <ScalarProperty Name="juegoExtremoNivelRiesgo" ColumnName="juegoExtremoNivelRiesgo" />
+                <ScalarProperty Name="juegoExtremoAltura" ColumnName="juegoExtremoAltura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ticket">
+            <EntityTypeMapping TypeName="masterModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="ticketID" ColumnName="ticketID" />
+                <ScalarProperty Name="ticketPrecio" ColumnName="ticketPrecio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

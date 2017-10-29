@@ -10,6 +10,7 @@ namespace WebApp
 {
     public partial class AgregarJuego : System.Web.UI.Page
     {
+
         private List<Juego> SessionJuego
         {
 
@@ -45,44 +46,30 @@ namespace WebApp
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Juego j;
-            String seleccion = ddlTipoJuego.SelectedValue;
+            Juego j = new Juego();
+            JuegoCasual jc = new JuegoCasual();
+            JuegoExtremo je = new JuegoExtremo();
 
-            if (seleccion == "JuegoCasual")
-            {
-                j = new JuegoCasual();
-                ((JuegoCasual)j).PoseeCinturon = this.chkCinturon.Checked;
-            }
-            else if (seleccion == "JuegoExtremo")
-            {
-                j = new JuegoExtremo();
-                ((JuegoExtremo)j).Altura = int.Parse(this.txtAltura.Text);
-                ((JuegoExtremo)j).Riesgo1 = (NivelDeRiesgo)Enum.Parse(typeof(NivelDeRiesgo), this.ddlRiesgo.SelectedValue);
-            }
-            else
-            {
-                j = null;
-            }
-
-            if (j.GetType().IsSubclassOf(typeof(Juego)))
-            {
-                j.Id = this.txtId.Text;
-                j.Nombre = this.txtNombre.Text;
-                j.Capacidad = int.Parse(this.txtCap.Text);
-                j.Tipojuego = (TipoJuego)Enum.Parse(typeof(TipoJuego), this.ddlTipoJuego.SelectedValue);
-                SessionJuego.Add(j);
+            j.Id = this.txtId.Text;
+            j.Nombre = this.txtNombre.Text;
+            j.Capacidad = int.Parse(this.txtCap.Text);
+            jc.PoseeCinturon1 = this.chkCinturon.Checked;
+            j.Tipojuego = (TipoJuego)Enum.Parse(typeof(TipoJuego), this.ddlTipoJuego.SelectedValue);
+            je.Altura = int.Parse(this.txtAltura.Text);
+            je.Riesgo1 = (NivelDeRiesgo)Enum.Parse(typeof(NivelDeRiesgo), this.ddlRiesgo.SelectedValue);
 
 
-                lblResumen.Text = "Juego agregado correctamente.";
-            }
-            else
-            {
-                lblResumen.Text = "Hubo un error de sistema. Por favor, reintente.";
-            }
+            SessionJuego.Add(j);
+            SessionJuego.Add(jc);
+            SessionJuego.Add(je);
+
+            lblResumen.Text = "La persona ha sido agregada correctamente";
         }
 
         protected void btnAgregarNuevo_Click(object sender, EventArgs e)
         {
+            
+
             this.txtNombre.Text = "";
             this.txtId.Text = "";
             this.txtCap.Text = "";

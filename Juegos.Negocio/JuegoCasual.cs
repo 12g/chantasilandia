@@ -8,32 +8,32 @@ namespace BibliotecaClases
 {
     public class JuegoCasual : Juego
     {
-        private bool _poseeCinturon;
-        private bool _requiereSupervision;
+        private bool PoseeCinturon;
+        private bool RequiereSupervision;
 
-        public bool PoseeCinturon
+        public bool PoseeCinturon1
         {
             get
             {
-                return _poseeCinturon;
+                return PoseeCinturon;
             }
 
             set
             {
-                _poseeCinturon = value;
+                PoseeCinturon = value;
             }
         }
 
-        public bool RequiereSupervision
+        public bool RequiereSupervision1
         {
             get
             {
-                return _requiereSupervision;
+                return RequiereSupervision;
             }
 
             set
             {
-                _requiereSupervision = value;
+                RequiereSupervision = value;
             }
         }
 
@@ -44,8 +44,8 @@ namespace BibliotecaClases
 
         private void Init()
         {
-            this.PoseeCinturon = false;
-            this.RequiereSupervision = false;
+            this.PoseeCinturon1 = false;
+            this.RequiereSupervision1 = false;
         }
     }
 }
