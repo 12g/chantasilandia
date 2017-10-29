@@ -106,10 +106,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BibliotecaClases\Juegos.Negocio.csproj">
-      <Project>{6b3fede4-1b14-4277-b05a-0bb7dd256f2d}</Project>
-      <Name>Juegos.Negocio</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WebApp\WebApp.csproj">
       <Project>{7e49529a-4ab6-4b91-96c5-ea1322a6e30f}</Project>
       <Name>WebApp</Name>
