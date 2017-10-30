@@ -12,7 +12,7 @@ namespace Juegos.DALC
     using System;
     using System.Collections.Generic;
     
-    public partial class Ticket
+    public partial class Tickets
     {
         public int ticketID { get; set; }
         public int ticketPrecio { get; set; }

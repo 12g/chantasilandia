@@ -5,10 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9e7c067f8fa24427bf7ff34529a399b8" Name="Diagram1">
-        <EntityTypeShape EntityType="masterModel.Cuentas" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Empleados" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Juegos" Width="1.5" PointX="2.875" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Ticket" Width="1.5" PointX="5.625" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Cuentas" Width="1.875" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Empleados" Width="2.625" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Juegos" Width="2.75" PointX="1.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.JuegosCasuales" Width="3" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="masterModel.JuegosExtremos" Width="2.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="masterModel.Tickets" Width="1.5" PointX="0.75" PointY="6.75" />
+        <AssociationConnector Association="masterModel.FK_JuegoExtremoID" />
+        <AssociationConnector Association="masterModel.FK_JuegosCasuales_Juegos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

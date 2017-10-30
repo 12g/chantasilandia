@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonBC.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Enumeraciones.cs" />

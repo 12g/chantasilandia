@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cuentas">
           <Key>
             <PropertyRef Name="cuentaID" />
@@ -28,37 +28,72 @@
           </Key>
           <Property Name="juegoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="juegoNombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="juegoTipo" Type="tinyint" Nullable="false" />
-          <Property Name="juegoCasualPoseeCinturon" Type="tinyint" />
-          <Property Name="juegoCasualReqSupervision" Type="tinyint" />
-          <Property Name="juegoExtremoNivelRiesgo" Type="int" />
-          <Property Name="juegoExtremoAltura" Type="int" />
+          <Property Name="juegoTipo" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'master.dbo.MSreplication_options' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'master.dbo.spt_fallback_db' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'master.dbo.spt_fallback_dev' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'master.dbo.spt_fallback_usg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="Ticket">
+        <EntityType Name="JuegosCasuales">
+          <Key>
+            <PropertyRef Name="juegoID" />
+          </Key>
+          <Property Name="juegoID" Type="int" Nullable="false" />
+          <Property Name="juegoCasualPoseeCinturon" Type="bit" Nullable="false" />
+          <Property Name="juegoCasualReqSupervision" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JuegosExtremos">
+          <Key>
+            <PropertyRef Name="juegoID" />
+          </Key>
+          <Property Name="juegoID" Type="int" Nullable="false" />
+          <Property Name="juegoExtremoNivelRiesgo" Type="int" Nullable="false" />
+          <Property Name="juegoExtremoAltura" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tickets">
           <Key>
             <PropertyRef Name="ticketID" />
           </Key>
           <Property Name="ticketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ticketPrecio" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_JuegoExtremoID">
+          <End Role="Juegos" Type="Self.Juegos" Multiplicity="1" />
+          <End Role="JuegosExtremos" Type="Self.JuegosExtremos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Juegos">
+              <PropertyRef Name="juegoID" />
+            </Principal>
+            <Dependent Role="JuegosExtremos">
+              <PropertyRef Name="juegoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JuegosCasuales_Juegos">
+          <End Role="Juegos" Type="Self.Juegos" Multiplicity="1" />
+          <End Role="JuegosCasuales" Type="Self.JuegosCasuales" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Juegos">
+              <PropertyRef Name="juegoID" />
+            </Principal>
+            <Dependent Role="JuegosCasuales">
+              <PropertyRef Name="juegoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="masterModelStoreContainer">
           <EntitySet Name="Cuentas" EntityType="Self.Cuentas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Juegos" EntityType="Self.Juegos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JuegosCasuales" EntityType="Self.JuegosCasuales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JuegosExtremos" EntityType="Self.JuegosExtremos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_JuegoExtremoID" Association="Self.FK_JuegoExtremoID">
+            <End Role="Juegos" EntitySet="Juegos" />
+            <End Role="JuegosExtremos" EntitySet="JuegosExtremos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JuegosCasuales_Juegos" Association="Self.FK_JuegosCasuales_Juegos">
+            <End Role="Juegos" EntitySet="Juegos" />
+            <End Role="JuegosCasuales" EntitySet="JuegosCasuales" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -86,24 +121,74 @@ warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary ke
           <Property Name="juegoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="juegoNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="juegoTipo" Type="Byte" Nullable="false" />
-          <Property Name="juegoCasualPoseeCinturon" Type="Byte" />
-          <Property Name="juegoCasualReqSupervision" Type="Byte" />
-          <Property Name="juegoExtremoNivelRiesgo" Type="Int32" />
-          <Property Name="juegoExtremoAltura" Type="Int32" />
+          <NavigationProperty Name="JuegosExtremos" Relationship="masterModel.FK_JuegoExtremoID" FromRole="Juegos" ToRole="JuegosExtremos" />
+          <NavigationProperty Name="JuegosCasuales" Relationship="masterModel.FK_JuegosCasuales_Juegos" FromRole="Juegos" ToRole="JuegosCasuales" />
         </EntityType>
-        <EntityType Name="Ticket">
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Juegos" EntityType="Self.Juegos" />
+          <EntitySet Name="JuegosCasuales" EntityType="masterModel.JuegosCasuales" />
+          <EntitySet Name="JuegosExtremos" EntityType="masterModel.JuegosExtremos" />
+          <EntitySet Name="Tickets" EntityType="masterModel.Tickets" />
+          <AssociationSet Name="FK_JuegoExtremoID" Association="masterModel.FK_JuegoExtremoID">
+            <End Role="Juegos" EntitySet="Juegos" />
+            <End Role="JuegosExtremos" EntitySet="JuegosExtremos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JuegosCasuales_Juegos" Association="masterModel.FK_JuegosCasuales_Juegos">
+            <End Role="Juegos" EntitySet="Juegos" />
+            <End Role="JuegosCasuales" EntitySet="JuegosCasuales" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="JuegosCasuales">
+          <Key>
+            <PropertyRef Name="juegoID" />
+          </Key>
+          <Property Name="juegoID" Type="Int32" Nullable="false" />
+          <Property Name="juegoCasualPoseeCinturon" Type="Byte" Nullable="false" />
+          <Property Name="juegoCasualReqSupervision" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Juegos" Relationship="masterModel.FK_JuegosCasuales_Juegos" FromRole="JuegosCasuales" ToRole="Juegos" />
+        </EntityType>
+        <EntityType Name="JuegosExtremos">
+          <Key>
+            <PropertyRef Name="juegoID" />
+          </Key>
+          <Property Name="juegoID" Type="Int32" Nullable="false" />
+          <Property Name="juegoExtremoNivelRiesgo" Type="Int32" Nullable="false" />
+          <Property Name="juegoExtremoAltura" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Juegos" Relationship="masterModel.FK_JuegoExtremoID" FromRole="JuegosExtremos" ToRole="Juegos" />
+        </EntityType>
+        <EntityType Name="Tickets">
           <Key>
             <PropertyRef Name="ticketID" />
           </Key>
           <Property Name="ticketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ticketPrecio" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" />
-          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
-          <EntitySet Name="Juegos" EntityType="Self.Juegos" />
-          <EntitySet Name="Ticket" EntityType="Self.Ticket" />
-        </EntityContainer>
+        <Association Name="FK_JuegoExtremoID">
+          <End Type="masterModel.Juegos" Role="Juegos" Multiplicity="1" />
+          <End Type="masterModel.JuegosExtremos" Role="JuegosExtremos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Juegos">
+              <PropertyRef Name="juegoID" />
+            </Principal>
+            <Dependent Role="JuegosExtremos">
+              <PropertyRef Name="juegoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JuegosCasuales_Juegos">
+          <End Type="masterModel.Juegos" Role="Juegos" Multiplicity="1" />
+          <End Type="masterModel.JuegosCasuales" Role="JuegosCasuales" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Juegos">
+              <PropertyRef Name="juegoID" />
+            </Principal>
+            <Dependent Role="JuegosCasuales">
+              <PropertyRef Name="juegoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -135,18 +220,32 @@ warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary ke
                 <ScalarProperty Name="juegoID" ColumnName="juegoID" />
                 <ScalarProperty Name="juegoNombre" ColumnName="juegoNombre" />
                 <ScalarProperty Name="juegoTipo" ColumnName="juegoTipo" />
-                <ScalarProperty Name="juegoCasualPoseeCinturon" ColumnName="juegoCasualPoseeCinturon" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JuegosCasuales">
+            <EntityTypeMapping TypeName="masterModel.JuegosCasuales">
+              <MappingFragment StoreEntitySet="JuegosCasuales">
                 <ScalarProperty Name="juegoCasualReqSupervision" ColumnName="juegoCasualReqSupervision" />
-                <ScalarProperty Name="juegoExtremoNivelRiesgo" ColumnName="juegoExtremoNivelRiesgo" />
-                <ScalarProperty Name="juegoExtremoAltura" ColumnName="juegoExtremoAltura" />
+                <ScalarProperty Name="juegoCasualPoseeCinturon" ColumnName="juegoCasualPoseeCinturon" />
+                <ScalarProperty Name="juegoID" ColumnName="juegoID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ticket">
-            <EntityTypeMapping TypeName="masterModel.Ticket">
-              <MappingFragment StoreEntitySet="Ticket">
-                <ScalarProperty Name="ticketID" ColumnName="ticketID" />
+          <EntitySetMapping Name="JuegosExtremos">
+            <EntityTypeMapping TypeName="masterModel.JuegosExtremos">
+              <MappingFragment StoreEntitySet="JuegosExtremos">
+                <ScalarProperty Name="juegoExtremoAltura" ColumnName="juegoExtremoAltura" />
+                <ScalarProperty Name="juegoExtremoNivelRiesgo" ColumnName="juegoExtremoNivelRiesgo" />
+                <ScalarProperty Name="juegoID" ColumnName="juegoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="masterModel.Tickets">
+              <MappingFragment StoreEntitySet="Tickets">
                 <ScalarProperty Name="ticketPrecio" ColumnName="ticketPrecio" />
+                <ScalarProperty Name="ticketID" ColumnName="ticketID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

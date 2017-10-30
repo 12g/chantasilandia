@@ -72,8 +72,14 @@
     <Compile Include="Juegos.cs">
       <DependentUpon>JuegoEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="JuegosCasuales.cs">
+      <DependentUpon>JuegoEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JuegosExtremos.cs">
+      <DependentUpon>JuegoEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.cs">
+    <Compile Include="Tickets.cs">
       <DependentUpon>JuegoEDM.tt</DependentUpon>
     </Compile>
   </ItemGroup>

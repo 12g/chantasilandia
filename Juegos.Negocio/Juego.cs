@@ -3,67 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Juegos.DALC;
 
 namespace BibliotecaClases
 {
     public class Juego 
     {
-        private string id;
-        private string nombre;
-        private int capacidad;
-        private TipoJuego tipojuego;
-
-        public string Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-
-        public string Nombre
-        {
-            get
-            {
-                return nombre;
-            }
-
-            set
-            {
-                nombre = value;
-            }
-        }
-
-        public int Capacidad
-        {
-            get
-            {
-                return capacidad;
-            }
-
-            set
-            {
-                capacidad = value;
-            }
-        }
-
-        public TipoJuego Tipojuego
-        {
-            get
-            {
-                return tipojuego;
-            }
-
-            set
-            {
-                tipojuego = value;
-            }
-        }
+        private int _id;
+        private string _nombre;
+        private byte _tipo;
 
         public Juego()
         {
@@ -72,11 +20,101 @@ namespace BibliotecaClases
 
         private void Init()
         {
-            this.Id = string.Empty;
-            this.Nombre = string.Empty;
-            this.Capacidad = 0;
-            this.Tipojuego = TipoJuego.JuegoCasual;
-            
+            Id = -1;
+            Nombre = "";
+            Tipo = 255;
+        }
+
+        public Juego(int id, string nombre, byte tipo)
+        {
+            _id = id;
+            _nombre = nombre;
+            _tipo = tipo;
+        }
+
+        public int Id { get => _id; set => _id = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public byte Tipo { get => _tipo; set => _tipo = value; }
+
+        public bool Crear()
+        {
+            try
+            {
+                Juegos.DALC.Juegos juego = new Juegos.DALC.Juegos();
+
+                juego.juegoID = this.Id;
+                juego.juegoNombre = this.Nombre;
+                juego.juegoTipo = this.Tipo;
+
+                CommonBC.Modelo.Juegos.Add(juego);
+
+                CommonBC.Modelo.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Delete()
+        {
+            try
+            {
+                var consulta = CommonBC.Modelo.Juegos.First
+                    (aux => aux.juegoID == this.Id);
+
+                CommonBC.Modelo.Juegos.Remove(consulta);
+
+                CommonBC.Modelo.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Update()
+        {
+            try
+            {
+                var consulta = CommonBC.Modelo.Juegos.First
+                    (aux => aux.juegoID == this.Id);
+
+                consulta.juegoID = this.Id;
+                consulta.juegoNombre = this.Nombre;
+                consulta.juegoTipo = this.Tipo;
+
+                CommonBC.Modelo.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool BuscarUno()
+        {
+            try
+            {
+                var consulta = CommonBC.Modelo.Juegos.First
+                    (aux => aux.juegoID == this.Id);
+
+                this.Id = consulta.juegoID;
+                this.Nombre = consulta.juegoNombre;
+                this.Tipo = consulta.juegoTipo;
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
