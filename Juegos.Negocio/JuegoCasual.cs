@@ -8,18 +8,19 @@ namespace BibliotecaClases
 {
     public class JuegoCasual : Juego
     {
+        #region campos
         private byte _requiereSupervision;
         private byte _poseeCinturon;
+        #endregion
+
+        #region atributos
+        public byte RequiereSupervision { get => _requiereSupervision; set => _requiereSupervision = value; }
+        public byte PoseeCinturon { get => _poseeCinturon; set => _poseeCinturon = value; }
+        #endregion
 
         public JuegoCasual() : base()
         {
             this.Init();
-        }
-
-        private void Init()
-        {
-            RequiereSupervision = 255;
-            PoseeCinturon = 255;
         }
 
         public JuegoCasual(int id, string nombre, byte tipo, byte requiereSupervision, byte poseeCinturon) : base(id, nombre, tipo)
@@ -28,24 +29,26 @@ namespace BibliotecaClases
             this.PoseeCinturon = poseeCinturon;
         }
 
-        public byte RequiereSupervision { get => _requiereSupervision; set => _requiereSupervision = value; }
-        public byte PoseeCinturon { get => _poseeCinturon; set => _poseeCinturon = value; }
+        private void Init()
+        {
+            this.RequiereSupervision = 255;
+            this.PoseeCinturon = 255;
+        }
 
         public new bool Crear()
         {
             try
             {
                 Juegos.DALC.Juegos juego = new Juegos.DALC.Juegos();
-                Juegos.DALC.JuegosCasuales juegoCasual = new Juegos.DALC.JuegosCasuales();
-
                 juego.juegoID = this.Id;
                 juego.juegoNombre = this.Nombre;
                 juego.juegoTipo = this.Tipo;
+                CommonBC.Modelo.Juegos.Add(juego);
+
+                Juegos.DALC.JuegosCasuales juegoCasual = new Juegos.DALC.JuegosCasuales();
                 juegoCasual.juegoID = this.Id;
                 juegoCasual.juegoCasualPoseeCinturon = this.PoseeCinturon;
                 juegoCasual.juegoCasualReqSupervision = this.RequiereSupervision;
-
-                CommonBC.Modelo.Juegos.Add(juego);
                 CommonBC.Modelo.JuegosCasuales.Add(juegoCasual);
 
                 CommonBC.Modelo.SaveChanges();
@@ -62,14 +65,13 @@ namespace BibliotecaClases
         {
             try
             {
-                var consulta1 = CommonBC.Modelo.Juegos.First
+                var juego = CommonBC.Modelo.Juegos.First
                     (aux => aux.juegoID == this.Id);
+                CommonBC.Modelo.Juegos.Remove(juego);
 
-                var consulta2 = CommonBC.Modelo.JuegosCasuales.First
+                var juegoCasual = CommonBC.Modelo.JuegosCasuales.First
                     (aux => aux.juegoID == this.Id);
-
-                CommonBC.Modelo.Juegos.Remove(consulta1);
-                CommonBC.Modelo.JuegosCasuales.Remove(consulta2);
+                CommonBC.Modelo.JuegosCasuales.Remove(juegoCasual);
 
                 CommonBC.Modelo.SaveChanges();
 
@@ -85,17 +87,17 @@ namespace BibliotecaClases
         {
             try
             {
-                var consulta1 = CommonBC.Modelo.Juegos.First
+                var juego = CommonBC.Modelo.Juegos.First
                     (aux => aux.juegoID == this.Id);
-                var consulta2 = CommonBC.Modelo.JuegosCasuales.First
-                    (aux => aux.juegoID == this.Id);
+                juego.juegoID = this.Id;
+                juego.juegoNombre = this.Nombre;
+                juego.juegoTipo = this.Tipo;
 
-                consulta1.juegoID = this.Id;
-                consulta1.juegoNombre = this.Nombre;
-                consulta1.juegoTipo = this.Tipo;
-                consulta2.juegoID = this.Id;
-                consulta2.juegoCasualReqSupervision = this.RequiereSupervision;
-                consulta2.juegoCasualPoseeCinturon= this.PoseeCinturon;
+                var juegoCasual = CommonBC.Modelo.JuegosCasuales.First
+                    (aux => aux.juegoID == this.Id);
+                juegoCasual.juegoID = this.Id;
+                juegoCasual.juegoCasualReqSupervision = this.RequiereSupervision;
+                juegoCasual.juegoCasualPoseeCinturon= this.PoseeCinturon;
 
                 CommonBC.Modelo.SaveChanges();
 
@@ -111,16 +113,16 @@ namespace BibliotecaClases
         {
             try
             {
-                var consulta1 = CommonBC.Modelo.Juegos.First
+                var juego = CommonBC.Modelo.Juegos.First
                     (aux => aux.juegoID == this.Id);
-                var consulta2 = CommonBC.Modelo.JuegosCasuales.First
-                    (aux => aux.juegoID == this.Id);
+                this.Id = juego.juegoID;
+                this.Nombre = juego.juegoNombre;
+                this.Tipo = juego.juegoTipo;
 
-                this.Id = consulta1.juegoID;
-                this.Nombre = consulta1.juegoNombre;
-                this.Tipo = consulta1.juegoTipo;
-                this.RequiereSupervision = consulta2.juegoCasualReqSupervision;
-                this.PoseeCinturon = consulta2.juegoCasualPoseeCinturon;
+                var juegoCasual = CommonBC.Modelo.JuegosCasuales.First
+                    (aux => aux.juegoID == this.Id);
+                this.RequiereSupervision = juegoCasual.juegoCasualReqSupervision;
+                this.PoseeCinturon = juegoCasual.juegoCasualPoseeCinturon;
 
                 return true;
             }

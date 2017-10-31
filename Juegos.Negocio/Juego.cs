@@ -9,9 +9,11 @@ namespace BibliotecaClases
 {
     public class Juego 
     {
+        #region campos
         private int _id;
         private string _nombre;
         private byte _tipo;
+        #endregion
 
         public Juego()
         {
@@ -20,16 +22,16 @@ namespace BibliotecaClases
 
         private void Init()
         {
-            Id = -1;
-            Nombre = "";
-            Tipo = 255;
+            this.Id = -1;
+            this.Nombre = "";
+            this.Tipo = 255;
         }
 
         public Juego(int id, string nombre, byte tipo)
         {
-            _id = id;
-            _nombre = nombre;
-            _tipo = tipo;
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Tipo = tipo;
         }
 
         public int Id { get => _id; set => _id = value; }

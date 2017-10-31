@@ -8,35 +8,39 @@ namespace BibliotecaClases
 {
     class Empleado
     {
+        #region campos
         private int _id;
         private string _nombre;
         private short _edad;
         private int _trabajoID;
+        #endregion
+
+        #region atributos
+        public int Id { get => _id; set => _id = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public short Edad { get => _edad; set => _edad = value; }
+        public int TrabajoID { get => _trabajoID; set => _trabajoID = value; }
+        #endregion
 
         public Empleado()
         {
             this.Init();
         }
 
-        private void Init()
-        {
-            Id = -1;
-            Nombre = "";
-            Edad = 10;
-        }
-
         public Empleado(int id, string nombre, short edad, int trabajoID)
         {
-            _id = id;
-            _nombre = nombre;
-            _edad = edad;
-            _trabajoID = trabajoID;
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Edad = edad;
+            this.TrabajoID = trabajoID;
         }
 
-        public int Id { get => _id; set => _id = value; }
-        public string Nombre { get => _nombre; set => _nombre = value; }
-        public short Edad { get => _edad; set => _edad = value; }
-        public int TrabajoID { get => _trabajoID; set => _trabajoID = value; }
+        private void Init()
+        {
+            this.Id = -1;
+            this.Nombre = "";
+            this.Edad = 10;
+        }
 
         public bool Crear()
         {
