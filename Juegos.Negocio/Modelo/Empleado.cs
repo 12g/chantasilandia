@@ -46,12 +46,13 @@ namespace BibliotecaClases
         {
             try
             {
-                Juegos.DALC.Empleados empleado = new Juegos.DALC.Empleados();
-
-                empleado.empleadoID = this.Id;
-                empleado.empleadoNombre = this.Nombre;
-                empleado.empleadoEdad = this.Edad;
-                empleado.empleadoTrabajoID = this.TrabajoID;
+                Juegos.DALC.Empleados empleado = new Juegos.DALC.Empleados
+                {
+                    empleadoID = this.Id,
+                    empleadoNombre = this.Nombre,
+                    empleadoEdad = this.Edad,
+                    empleadoTrabajoID = this.TrabajoID
+                };
 
                 CommonBC.Modelo.Empleados.Add(empleado);
 

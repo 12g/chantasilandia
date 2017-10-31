@@ -42,12 +42,12 @@ namespace BibliotecaClases
         {
             try
             {
-                Juegos.DALC.Juegos juego = new Juegos.DALC.Juegos();
-
-                juego.juegoID = this.Id;
-                juego.juegoNombre = this.Nombre;
-                juego.juegoTipo = this.Tipo;
-
+                Juegos.DALC.Juegos juego = new Juegos.DALC.Juegos
+                {
+                    juegoID = this.Id,
+                    juegoNombre = this.Nombre,
+                    juegoTipo = this.Tipo
+                };
                 CommonBC.Modelo.Juegos.Add(juego);
 
                 CommonBC.Modelo.SaveChanges();

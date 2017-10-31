@@ -44,15 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colecciones\CuentaCollection.cs" />
+    <Compile Include="Colecciones\EmpleadoCollection.cs" />
+    <Compile Include="Colecciones\JuegoCasualCollection.cs" />
+    <Compile Include="Colecciones\JuegoExtremoCollection.cs" />
+    <Compile Include="Colecciones\TicketCollection.cs" />
     <Compile Include="CommonBC.cs" />
-    <Compile Include="Cuenta.cs" />
-    <Compile Include="Empleado.cs" />
+    <Compile Include="Modelo\Cuenta.cs" />
+    <Compile Include="Modelo\Empleado.cs" />
     <Compile Include="Enumeraciones.cs" />
-    <Compile Include="Juego.cs" />
-    <Compile Include="JuegoCasual.cs" />
-    <Compile Include="JuegoExtremo.cs" />
+    <Compile Include="Modelo\Juego.cs" />
+    <Compile Include="Modelo\JuegoCasual.cs" />
+    <Compile Include="Colecciones\JuegoCollection.cs" />
+    <Compile Include="Modelo\JuegoExtremo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.cs" />
+    <Compile Include="Modelo\Ticket.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Juegos.DALC\Juegos.DALC.csproj">

@@ -39,11 +39,12 @@ namespace BibliotecaClases
         {
             try
             {
-                Juegos.DALC.Cuentas cuenta = new Juegos.DALC.Cuentas();
-
-                cuenta.cuentaID = this.Id;
-                cuenta.cuentaUsuario = this.Usuario;
-                cuenta.cuentaPassword = this.Contraseña;
+                Juegos.DALC.Cuentas cuenta = new Juegos.DALC.Cuentas
+                {
+                    cuentaID = this.Id,
+                    cuentaUsuario = this.Usuario,
+                    cuentaPassword = this.Contraseña
+                };
 
                 CommonBC.Modelo.Cuentas.Add(cuenta);
 

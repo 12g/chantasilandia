@@ -39,16 +39,20 @@ namespace BibliotecaClases
         {
             try
             {
-                Juegos.DALC.Juegos juego = new Juegos.DALC.Juegos();
-                juego.juegoID = this.Id;
-                juego.juegoNombre = this.Nombre;
-                juego.juegoTipo = this.Tipo;
+                Juegos.DALC.Juegos juego = new Juegos.DALC.Juegos
+                {
+                    juegoID = this.Id,
+                    juegoNombre = this.Nombre,
+                    juegoTipo = this.Tipo
+                };
                 CommonBC.Modelo.Juegos.Add(juego);
 
-                Juegos.DALC.JuegosCasuales juegoCasual = new Juegos.DALC.JuegosCasuales();
-                juegoCasual.juegoID = this.Id;
-                juegoCasual.juegoCasualPoseeCinturon = this.PoseeCinturon;
-                juegoCasual.juegoCasualReqSupervision = this.RequiereSupervision;
+                Juegos.DALC.JuegosCasuales juegoCasual = new Juegos.DALC.JuegosCasuales
+                {
+                    juegoID = this.Id,
+                    juegoCasualPoseeCinturon = this.PoseeCinturon,
+                    juegoCasualReqSupervision = this.RequiereSupervision
+                };
                 CommonBC.Modelo.JuegosCasuales.Add(juegoCasual);
 
                 CommonBC.Modelo.SaveChanges();

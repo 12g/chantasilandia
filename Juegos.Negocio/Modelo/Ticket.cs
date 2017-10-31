@@ -39,9 +39,11 @@ namespace BibliotecaClases
         {
             try
             {
-                Juegos.DALC.Tickets ticket = new Juegos.DALC.Tickets();
-                ticket.ticketID = this.Id;
-                ticket.ticketPrecio = this.Valor;
+                Juegos.DALC.Tickets ticket = new Juegos.DALC.Tickets
+                {
+                    ticketID = this.Id,
+                    ticketPrecio = this.Valor
+                };
 
                 CommonBC.Modelo.Tickets.Add(ticket);
                 CommonBC.Modelo.SaveChanges();

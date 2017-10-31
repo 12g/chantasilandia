@@ -10,7 +10,7 @@ namespace BibliotecaClases
     class CommonBC
     {
         private static masterEntities _modelo;
-
+        
         public static masterEntities Modelo
         {
             get
