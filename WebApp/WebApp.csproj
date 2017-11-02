@@ -68,10 +68,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="FormDetallesJuego.aspx" />
-    <Content Include="FormListaJuegos.aspx" />
+    <Content Include="FormMantenedorJuegos.aspx" />
+    <Content Include="FormMestroJuegos.aspx" />
     <Content Include="Inicio.aspx" />
-    <Content Include="Maestro.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
     <Content Include="Cuentas.xml" />
@@ -88,19 +87,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDetallesJuego.aspx.cs">
-      <DependentUpon>FormDetallesJuego.aspx</DependentUpon>
+    <Compile Include="FormMantenedorJuegos.aspx.cs">
+      <DependentUpon>FormMantenedorJuegos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormDetallesJuego.aspx.designer.cs">
-      <DependentUpon>FormDetallesJuego.aspx</DependentUpon>
+    <Compile Include="FormMantenedorJuegos.aspx.designer.cs">
+      <DependentUpon>FormMantenedorJuegos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormListaJuegos.aspx.cs">
-      <DependentUpon>FormListaJuegos.aspx</DependentUpon>
+    <Compile Include="FormMestroJuegos.aspx.cs">
+      <DependentUpon>FormMestroJuegos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormListaJuegos.aspx.designer.cs">
-      <DependentUpon>FormListaJuegos.aspx</DependentUpon>
+    <Compile Include="FormMestroJuegos.aspx.designer.cs">
+      <DependentUpon>FormMestroJuegos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -115,13 +114,6 @@
     </Compile>
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Maestro.aspx.cs">
-      <DependentUpon>Maestro.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Maestro.aspx.designer.cs">
-      <DependentUpon>Maestro.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

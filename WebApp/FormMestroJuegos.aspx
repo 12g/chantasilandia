@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="FormListaJuegos.aspx.cs" Inherits="WebApp.FormListaJuegos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="FormMestroJuegos.aspx.cs" Inherits="WebApp.FormListaJuegos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
     <title>Lista de Juegos</title>
