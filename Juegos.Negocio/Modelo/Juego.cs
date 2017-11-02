@@ -13,7 +13,7 @@ namespace BibliotecaClases
         #region campos
         private int _id;
         private string _nombre;
-        private byte _tipo;
+        private bool _esEsTipoCasualCasual;
 
         public int Id
         {
@@ -41,16 +41,16 @@ namespace BibliotecaClases
             }
         }
 
-        public byte Tipo
+        public bool EsTipoCasual
         {
             get
             {
-                return _tipo;
+                return _esEsTipoCasualCasual;
             }
 
             set
             {
-                _tipo = value;
+                _esEsTipoCasualCasual = value;
             }
         }
         #endregion
@@ -64,14 +64,14 @@ namespace BibliotecaClases
         {
             this.Id = -1;
             this.Nombre = "";
-            this.Tipo = 255;
+            this.EsTipoCasual = false;
         }
 
-        public Juego(int id, string nombre, byte tipo)
+        public Juego(int id, string nombre, bool tipo)
         {
             this.Id = id;
             this.Nombre = nombre;
-            this.Tipo = tipo;
+            this.EsTipoCasual = tipo;
         }
 
         
@@ -84,7 +84,7 @@ namespace BibliotecaClases
                 {
                     juegoID = this.Id,
                     juegoNombre = this.Nombre,
-                    juegoTipo = this.Tipo
+                    juegoTipo = this.EsTipoCasual
                 };
                 CommonBC.Modelo.Juegos.Add(juego);
 
@@ -126,7 +126,7 @@ namespace BibliotecaClases
 
                 consulta.juegoID = this.Id;
                 consulta.juegoNombre = this.Nombre;
-                consulta.juegoTipo = this.Tipo;
+                consulta.juegoTipo = this.EsTipoCasual;
 
                 CommonBC.Modelo.SaveChanges();
 
@@ -147,7 +147,7 @@ namespace BibliotecaClases
 
                 this.Id = consulta.juegoID;
                 this.Nombre = consulta.juegoNombre;
-                this.Tipo = consulta.juegoTipo;
+                this.EsTipoCasual = consulta.juegoTipo;
 
                 return true;
             }

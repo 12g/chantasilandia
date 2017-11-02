@@ -26,7 +26,7 @@ namespace BibliotecaClases.Colecciones
                 {
                     Id = item.juegoID,
                     Nombre = juego.juegoNombre,
-                    Tipo = juego.juegoTipo,
+                    EsTipoCasual = true,
                     PoseeCinturon = item.juegoCasualPoseeCinturon,
                     RequiereSupervision = item.juegoCasualReqSupervision
                 };

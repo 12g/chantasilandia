@@ -10,10 +10,10 @@ namespace Juegos.Negocio
     public class JuegoCasual : Juego
     {
         #region campos
-        private byte _requiereSupervision;
-        private byte _poseeCinturon;
+        private bool _requiereSupervision;
+        private bool _poseeCinturon;
 
-        public byte RequiereSupervision
+        public bool RequiereSupervision
         {
             get
             {
@@ -26,7 +26,7 @@ namespace Juegos.Negocio
             }
         }
 
-        public byte PoseeCinturon
+        public bool PoseeCinturon
         {
             get
             {
@@ -44,21 +44,27 @@ namespace Juegos.Negocio
 
         #endregion
 
-        public JuegoCasual() : base()
+        public JuegoCasual()
         {
             this.Init();
         }
 
-        public JuegoCasual(int id, string nombre, byte tipo, byte requiereSupervision, byte poseeCinturon) : base(id, nombre, tipo)
+        public JuegoCasual(int id, string nombre, bool tipo, bool requiereSupervision, bool poseeCinturon)
         {
+            this.Id = id;
+            this.Nombre = nombre;
+            this.EsTipoCasual = true;
             this.RequiereSupervision = requiereSupervision;
             this.PoseeCinturon = poseeCinturon;
         }
 
         private void Init()
         {
-            this.RequiereSupervision = 255;
-            this.PoseeCinturon = 255;
+            this.Id = -1;
+            this.Nombre = "";
+            this.EsTipoCasual = true;
+            this.RequiereSupervision = false;
+            this.PoseeCinturon = false;
         }
 
         public new bool Crear()
@@ -69,7 +75,7 @@ namespace Juegos.Negocio
                 {
                     juegoID = this.Id,
                     juegoNombre = this.Nombre,
-                    juegoTipo = this.Tipo
+                    juegoTipo = true
                 };
                 CommonBC.Modelo.Juegos.Add(juego);
 
@@ -121,7 +127,7 @@ namespace Juegos.Negocio
                     (aux => aux.juegoID == this.Id);
                 juego.juegoID = this.Id;
                 juego.juegoNombre = this.Nombre;
-                juego.juegoTipo = this.Tipo;
+                juego.juegoTipo = true;
 
                 var juegoCasual = CommonBC.Modelo.JuegosCasuales.First
                     (aux => aux.juegoID == this.Id);
@@ -147,7 +153,6 @@ namespace Juegos.Negocio
                     (aux => aux.juegoID == this.Id);
                 this.Id = juego.juegoID;
                 this.Nombre = juego.juegoNombre;
-                this.Tipo = juego.juegoTipo;
 
                 var juegoCasual = CommonBC.Modelo.JuegosCasuales.First
                     (aux => aux.juegoID == this.Id);

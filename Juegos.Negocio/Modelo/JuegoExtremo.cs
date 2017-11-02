@@ -12,7 +12,9 @@ namespace BibliotecaClases
         #region campos
         private int _nivelRiesgo;
         private int _altura;
+        #endregion
 
+        #region atributos
         public int NivelRiesgo
         {
             get
@@ -40,25 +42,27 @@ namespace BibliotecaClases
         }
         #endregion
 
-        #region atributos
-
-        #endregion
-
-        public JuegoExtremo() : base()
+        public JuegoExtremo()
         {
             this.Init();
         }
 
-        public JuegoExtremo(int id, string nombre, byte tipo, byte requiereSupervision, byte poseeCinturon) : base(id, nombre, tipo)
+        public JuegoExtremo(int id, string nombre, bool tipo, int nivelRiesgo, int altura)
         {
-            this.NivelRiesgo = requiereSupervision;
-            this.Altura = poseeCinturon;
+            this.Id = id;
+            this.Nombre = nombre;
+            this.EsTipoCasual = false;
+            this.NivelRiesgo = nivelRiesgo;
+            this.Altura = altura;
         }
 
         private void Init()
         {
-            this.NivelRiesgo = 255;
-            this.Altura = 255;
+            this.Id = -1;
+            this.Nombre = "";
+            this.EsTipoCasual = false;
+            this.NivelRiesgo = -1;
+            this.Altura = -1;
         }
 
         public new bool Crear()
@@ -69,7 +73,7 @@ namespace BibliotecaClases
                 {
                     juegoID = this.Id,
                     juegoNombre = this.Nombre,
-                    juegoTipo = this.Tipo
+                    juegoTipo = false
                 };
                 CommonBC.Modelo.Juegos.Add(juego);
 
@@ -121,7 +125,7 @@ namespace BibliotecaClases
                     (aux => aux.juegoID == this.Id);
                 juego.juegoID = this.Id;
                 juego.juegoNombre = this.Nombre;
-                juego.juegoTipo = this.Tipo;
+                juego.juegoTipo = false;
 
                 var juegoExtremo = CommonBC.Modelo.JuegosExtremos.First
                     (aux => aux.juegoID == this.Id);
@@ -147,7 +151,7 @@ namespace BibliotecaClases
                     (aux => aux.juegoID == this.Id);
                 this.Id = juego.juegoID;
                 this.Nombre = juego.juegoNombre;
-                this.Tipo = juego.juegoTipo;
+                this.EsTipoCasual = false;
 
                 var juegoExtremo = CommonBC.Modelo.JuegosExtremos.First
                     (aux => aux.juegoID == this.Id);

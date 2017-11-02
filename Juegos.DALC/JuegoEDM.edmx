@@ -120,7 +120,7 @@
           </Key>
           <Property Name="juegoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="juegoNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="juegoTipo" Type="Byte" Nullable="false" />
+          <Property Name="juegoTipo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="JuegosExtremos" Relationship="masterModel.FK_JuegoExtremoID" FromRole="Juegos" ToRole="JuegosExtremos" />
           <NavigationProperty Name="JuegosCasuales" Relationship="masterModel.FK_JuegosCasuales_Juegos" FromRole="Juegos" ToRole="JuegosCasuales" />
         </EntityType>
@@ -145,8 +145,8 @@
             <PropertyRef Name="juegoID" />
           </Key>
           <Property Name="juegoID" Type="Int32" Nullable="false" />
-          <Property Name="juegoCasualPoseeCinturon" Type="Byte" Nullable="false" />
-          <Property Name="juegoCasualReqSupervision" Type="Byte" Nullable="false" />
+          <Property Name="juegoCasualPoseeCinturon" Type="Boolean" Nullable="false" />
+          <Property Name="juegoCasualReqSupervision" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Juegos" Relationship="masterModel.FK_JuegosCasuales_Juegos" FromRole="JuegosCasuales" ToRole="Juegos" />
         </EntityType>
         <EntityType Name="JuegosExtremos">

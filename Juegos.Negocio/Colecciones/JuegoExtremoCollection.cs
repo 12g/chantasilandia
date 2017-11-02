@@ -26,7 +26,7 @@ namespace BibliotecaClases.Colecciones
                 {
                     Id = item.juegoID,
                     Nombre = juego.juegoNombre,
-                    Tipo = juego.juegoTipo,
+                    EsTipoCasual = true,
                     Altura = item.juegoExtremoAltura,
                     NivelRiesgo = item.juegoExtremoNivelRiesgo
                 };

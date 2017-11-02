@@ -23,7 +23,7 @@ namespace BibliotecaClases
                 Juego tmp = new Juego();
                 tmp.Id = item.juegoID;
                 tmp.Nombre = item.juegoNombre; 
-                tmp.Tipo = item.juegoTipo;
+                tmp.EsTipoCasual = item.juegoTipo;
 
                 juegos.Add(tmp);
             }
