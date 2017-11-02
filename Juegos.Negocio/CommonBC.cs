@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Juegos.DALC;
 
-namespace BibliotecaClases
+namespace Juegos.Negocio
 {
     class CommonBC
     {

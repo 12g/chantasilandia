@@ -1,21 +1,47 @@
-﻿using System;
+﻿using BibliotecaClases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaClases
+namespace Juegos.Negocio
 {
     public class JuegoCasual : Juego
     {
         #region campos
         private byte _requiereSupervision;
         private byte _poseeCinturon;
+
+        public byte RequiereSupervision
+        {
+            get
+            {
+                return _requiereSupervision;
+            }
+
+            set
+            {
+                _requiereSupervision = value;
+            }
+        }
+
+        public byte PoseeCinturon
+        {
+            get
+            {
+                return _poseeCinturon;
+            }
+
+            set
+            {
+                _poseeCinturon = value;
+            }
+        }
         #endregion
 
         #region atributos
-        public byte RequiereSupervision { get => _requiereSupervision; set => _requiereSupervision = value; }
-        public byte PoseeCinturon { get => _poseeCinturon; set => _poseeCinturon = value; }
+
         #endregion
 
         public JuegoCasual() : base()

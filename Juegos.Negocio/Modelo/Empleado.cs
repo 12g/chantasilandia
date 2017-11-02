@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BibliotecaClases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaClases
+namespace Juegos.Negocio
 {
     class Empleado
     {
@@ -13,13 +14,62 @@ namespace BibliotecaClases
         private string _nombre;
         private short _edad;
         private int _trabajoID;
+
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+
+            set
+            {
+                _nombre = value;
+            }
+        }
+
+        public short Edad
+        {
+            get
+            {
+                return _edad;
+            }
+
+            set
+            {
+                _edad = value;
+            }
+        }
+
+        public int TrabajoID
+        {
+            get
+            {
+                return _trabajoID;
+            }
+
+            set
+            {
+                _trabajoID = value;
+            }
+        }
         #endregion
 
         #region atributos
-        public int Id { get => _id; set => _id = value; }
-        public string Nombre { get => _nombre; set => _nombre = value; }
-        public short Edad { get => _edad; set => _edad = value; }
-        public int TrabajoID { get => _trabajoID; set => _trabajoID = value; }
+
         #endregion
 
         public Empleado()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juegos.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,35 @@ namespace BibliotecaClases
         #region campos
         private int _id;
         private int _valor;
+
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
+
+        public int Valor
+        {
+            get
+            {
+                return _valor;
+            }
+
+            set
+            {
+                _valor = value;
+            }
+        }
         #endregion
 
-        #region atributos
-        public int Id { get => _id; set => _id = value; }
-        public int Valor { get => _valor; set => _valor = value; }
-        #endregion
+
 
         public Ticket()
         {

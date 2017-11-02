@@ -10,42 +10,33 @@
 namespace WebApp {
     
     
-    public partial class LoginForm {
+    public partial class Maestro {
         
         /// <summary>
-        /// FormLogin control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm FormLogin;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// TextBoxEmail control.
+        /// SiteMapDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
         
         /// <summary>
-        /// TextBoxPassword control.
+        /// SiteMapPath1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
-        
-        /// <summary>
-        /// ButtonSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
+        protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
     }
 }

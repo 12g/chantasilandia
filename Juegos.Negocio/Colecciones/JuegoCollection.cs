@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juegos.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace BibliotecaClases
             {
                 Juego tmp = new Juego();
                 tmp.Id = item.juegoID;
-                tmp.Nombre = item.juegoNombre;
+                tmp.Nombre = item.juegoNombre; 
                 tmp.Tipo = item.juegoTipo;
 
                 juegos.Add(tmp);

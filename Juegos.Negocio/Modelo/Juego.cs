@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Juegos.DALC;
+using Juegos.Negocio;
 
 namespace BibliotecaClases
 {
@@ -13,6 +14,45 @@ namespace BibliotecaClases
         private int _id;
         private string _nombre;
         private byte _tipo;
+
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+
+            set
+            {
+                _nombre = value;
+            }
+        }
+
+        public byte Tipo
+        {
+            get
+            {
+                return _tipo;
+            }
+
+            set
+            {
+                _tipo = value;
+            }
+        }
         #endregion
 
         public Juego()
@@ -34,9 +74,7 @@ namespace BibliotecaClases
             this.Tipo = tipo;
         }
 
-        public int Id { get => _id; set => _id = value; }
-        public string Nombre { get => _nombre; set => _nombre = value; }
-        public byte Tipo { get => _tipo; set => _tipo = value; }
+        
 
         public bool Crear()
         {

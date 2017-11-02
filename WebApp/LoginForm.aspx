@@ -23,7 +23,7 @@
                             <label for="TextBoxPassword">Clave</label>
                             <asp:TextBox ID="TextBoxPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                         </div>
-                        <asp:Button ID="ButtonSubmit" runat="server" Text="Ingresar" CssClass="btn btn-primary"  PostBackUrl="Index.aspx" />
+                        <asp:Button ID="ButtonSubmit" runat="server" Text="Ingresar" CssClass="btn btn-primary"  PostBackUrl="Inicio.aspx" OnClick="ButtonSubmit_Click1" />
                     </form>
                 </div>
             </div>

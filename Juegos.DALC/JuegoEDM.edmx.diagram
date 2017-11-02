@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9e7c067f8fa24427bf7ff34529a399b8" Name="Diagram1">
         <EntityTypeShape EntityType="masterModel.Cuentas" Width="1.875" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Empleados" Width="2.625" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Empleados" Width="2.625" PointX="4.375" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="masterModel.Juegos" Width="2.75" PointX="1.5" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="masterModel.JuegosCasuales" Width="3" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="masterModel.JuegosExtremos" Width="2.5" PointX="6.75" PointY="6.75" />

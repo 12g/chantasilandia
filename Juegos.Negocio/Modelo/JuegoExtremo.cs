@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juegos.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,36 @@ namespace BibliotecaClases
         #region campos
         private int _nivelRiesgo;
         private int _altura;
+
+        public int NivelRiesgo
+        {
+            get
+            {
+                return _nivelRiesgo;
+            }
+
+            set
+            {
+                _nivelRiesgo = value;
+            }
+        }
+
+        public int Altura
+        {
+            get
+            {
+                return _altura;
+            }
+
+            set
+            {
+                _altura = value;
+            }
+        }
         #endregion
 
         #region atributos
-        public int NivelRiesgo { get => _nivelRiesgo; set => _nivelRiesgo = value; }
-        public int Altura { get => _altura; set => _altura = value; }
+
         #endregion
 
         public JuegoExtremo() : base()

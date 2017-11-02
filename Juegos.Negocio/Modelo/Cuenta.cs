@@ -1,20 +1,57 @@
-﻿using System;
+﻿using BibliotecaClases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaClases
+
+namespace Juegos.Negocio
 {
     public class Cuenta
     {
         private int _id;
         private string _usuario;
         private string _contraseña;
-        
-        public int Id { get => _id; set => _id = value; }
-        public string Usuario { get => _usuario; set => _usuario = value; }
-        public string Contraseña { get => _contraseña; set => _contraseña = value; }
+
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
+
+        public string Usuario
+        {
+            get
+            {
+                return _usuario;
+            }
+
+            set
+            {
+                _usuario = value;
+            }
+        }
+
+        public string Contraseña
+        {
+            get
+            {
+                return _contraseña;
+            }
+
+            set
+            {
+                _contraseña = value;
+            }
+        }
 
         public Cuenta()
         {

@@ -71,6 +71,7 @@
     <Content Include="FormDetallesJuego.aspx" />
     <Content Include="FormListaJuegos.aspx" />
     <Content Include="Inicio.aspx" />
+    <Content Include="Maestro.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
     <Content Include="Cuentas.xml" />
@@ -80,6 +81,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LoginForm.aspx" />
@@ -114,6 +116,13 @@
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Maestro.aspx.cs">
+      <DependentUpon>Maestro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestro.aspx.designer.cs">
+      <DependentUpon>Maestro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +136,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Juegos.DALC\Juegos.DALC.csproj">
+      <Project>{f2cbf135-d458-41a4-b0bc-97814e9032b7}</Project>
+      <Name>Juegos.DALC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Juegos.Negocio\Juegos.Negocio.csproj">
       <Project>{6b3fede4-1b14-4277-b05a-0bb7dd256f2d}</Project>
       <Name>Juegos.Negocio</Name>
