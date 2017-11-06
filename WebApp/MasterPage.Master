@@ -6,38 +6,16 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="ContentHead" runat="server" />
 </head>
-<body class="bg-warning">
+<body>
     <form id="FormMain" runat="server">
-        <div class="container">
-            <br />
-            <div class="row">
-                <div class="panel panel-info col-sm-8 col-sm-offset-2 text-center">
-                    <div class="panel-title">
-                        <h1>Chantasilandia</h1>
-                        <h3>¡La diversión fatal!</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-xs-6 col-sm-3 col-sm-offset-1">
-                            <a href="FormMantenedorJuegos.aspx" class="btn btn-primary">Mantenedor Juegos</a>
-                        </div>
-                        <div class="col-xs-6 col-sm-3 col-sm-offset-4">
-                            <a href="FormMaestroJuegos.aspx" class="btn btn-success">Maestro Juegos</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="panel panel-default col-xs-12">
-                    <br />
-                    <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
-                    <br />
-                </div>
-            </div>
-        </div>
+        <h1>Chantasilandia</h1>
+        <h3>¡La diversión fatal!</h3>
+        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapData"></asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapData" runat="server" />
+        <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
+        <br />
     </form>
 </body>
 </html>

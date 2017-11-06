@@ -3,10 +3,5 @@
     <title>Inicio - Chantasilandia</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
-    <div class="row">
-        <div class="panel col-xs-8 col-xs-offset-2">
-            <h1>Chantasilandia</h1>
-            <p>¡La diversión fatal!</p>
-        </div>
-    </div>
+    <p>Bienvenido al portal de mantenimiento del sistema Chantasilandia!</p>
 </asp:Content>

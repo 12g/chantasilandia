@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Juegos.Negocio.Colecciones;
 
 namespace WebApp
 {
@@ -11,17 +12,14 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            JuegoCasualCollection listaCasuales = new JuegoCasualCollection();
+            GdJuegosCasuales.DataSource = listaCasuales.ReadAll();
+            GdJuegosCasuales.DataBind();
 
+            JuegoExtremoCollection listaExtremos = new JuegoExtremoCollection();
+            GdJuegosExtremos.DataSource = listaExtremos.ReadAll();
+            GdJuegosExtremos.DataBind();
         }
-
-        protected void BtnVer_Click(object sender, EventArgs e)
-        {
-            int juego = GdJuegos.SelectedIndex;
-            if (juego > 0)
-            {
-                String url = String.Format("FormMantenedorJuegos.aspx?id={0}", juego);
-                Response.Redirect(url);
-            }
-        }
+        
     }
 }

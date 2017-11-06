@@ -13,6 +13,15 @@ namespace WebApp {
     public partial class FormAgregarJuego {
         
         /// <summary>
+        /// Control Table1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table1;
+        
+        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>
@@ -31,22 +40,13 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoJuego;
         
         /// <summary>
-        /// Control divJuegoExtremo.
+        /// Control TxtRiesgo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divJuegoExtremo;
-        
-        /// <summary>
-        /// Control TextBox1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TxtRiesgo;
         
         /// <summary>
         /// Control txtAltura.
@@ -58,31 +58,22 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.TextBox txtAltura;
         
         /// <summary>
-        /// Control divJuegoCasual.
+        /// Control ChkRequiereSupervision.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divJuegoCasual;
+        protected global::System.Web.UI.WebControls.CheckBox ChkRequiereSupervision;
         
         /// <summary>
-        /// Control chkRequiereSupervision.
+        /// Control ChkPoseeCinturon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkRequiereSupervision;
-        
-        /// <summary>
-        /// Control chkPoseeCinturon.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkPoseeCinturon;
+        protected global::System.Web.UI.WebControls.CheckBox ChkPoseeCinturon;
         
         /// <summary>
         /// Control btnLimpiar.

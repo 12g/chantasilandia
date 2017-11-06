@@ -13,18 +13,12 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String[] args = Request.QueryString.AllKeys;
-            if (args[0] != null)
-            {
-                
-            }
+            
         }
 
         protected void OnSelectTipoJuego(object sender, EventArgs e)
         {
-
-            divJuegoExtremo.Visible = (ddlTipoJuego.SelectedIndex == 0);
-            divJuegoCasual.Visible = (ddlTipoJuego.SelectedIndex == 1);
+            
         }
 
         protected void OnSubmitNew(object sender, EventArgs e)

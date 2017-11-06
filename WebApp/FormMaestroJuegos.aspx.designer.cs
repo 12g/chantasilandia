@@ -13,48 +13,48 @@ namespace WebApp {
     public partial class FormListaJuegos {
         
         /// <summary>
-        /// Control GdJuegos.
+        /// Control Table1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GdJuegos;
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// Control JuegosChantasilandiaDB.
+        /// Control GdJuegosCasuales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource JuegosChantasilandiaDB;
+        protected global::System.Web.UI.WebControls.GridView GdJuegosCasuales;
         
         /// <summary>
-        /// Control BtnVer.
+        /// Control GdJuegosExtremos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnVer;
+        protected global::System.Web.UI.WebControls.GridView GdJuegosExtremos;
         
         /// <summary>
-        /// Control BtnEditar.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEditar;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control BtnBorrar.
+        /// Control Button3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnBorrar;
+        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }
