@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="" title=""  description="">
-    <siteMapNode url="Inicio.aspx" title="Inicio"  description="" />
-    <siteMapNode url="FormMaestroJuegos.aspx" title="Juegos"  description="">
-      <siteMapNode url="FormMaestroJuegos.aspx" title="Maestro"  description="" />
-      <siteMapNode url="FormMantenedorJuegos.aspx" title="Mantenedor"  description="" />
+    <siteMapNode url="~/Inicio.aspx" title="Inicio"  description="">
+      <siteMapNode url="~/FormMaestroJuegos.aspx" title="Maestro de Juegos"  description="" />
+      <siteMapNode url="~/FormMantenedorJuegos.aspx" title="Mantenedor de Juegos"  description="" />
     </siteMapNode>
-    <!-- <siteMapNode url="Logout.aspx" title="Salir" /> Deberíamos agregar esto en el futuro -->
   </siteMapNode>
+  <!-- <siteMapNode url="Logout.aspx" title="Salir" /> Deberíamos agregar esto en el futuro -->
 </siteMap>

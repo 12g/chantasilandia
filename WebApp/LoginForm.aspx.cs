@@ -13,5 +13,19 @@ namespace WebApp
         {
 
         }
+
+        protected void OnSubmit(object sender, EventArgs e)
+        {
+            String email = TextBoxEmail.Text.ToLower();
+            String password = TextBoxPassword.Text;
+            if (email.Trim() != "" && password.Trim() != "")
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+            else
+            {
+                return;
+            }
+        }
     }       
 }
