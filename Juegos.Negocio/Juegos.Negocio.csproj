@@ -7,8 +7,8 @@
     <ProjectGuid>{6B3FEDE4-1B14-4277-B05A-0BB7DD256F2D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BibliotecaClases</RootNamespace>
-    <AssemblyName>BibliotecaClases</AssemblyName>
+    <RootNamespace>Juegos.Negocio</RootNamespace>
+    <AssemblyName>Juegos.Negocio</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

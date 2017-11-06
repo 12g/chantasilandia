@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Juegos.Negocio;
 
 namespace WebApp
 {
@@ -11,9 +13,10 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            String[] args = Request.QueryString.AllKeys;
+            if (args[0] != null)
             {
-
+                
             }
         }
 

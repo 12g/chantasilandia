@@ -1,13 +1,13 @@
-﻿using BibliotecaClases;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Juegos.Negocio.Modelo;
 
 namespace Juegos.Negocio.Colecciones
 {
-    class EmpleadoCollection
+    public class EmpleadoCollection
     {
         public EmpleadoCollection()
         {

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Juegos.DALC;
-using Juegos.Negocio;
 
-namespace BibliotecaClases
+namespace Juegos.Negocio.Modelo
 {
     public class Juego 
     {

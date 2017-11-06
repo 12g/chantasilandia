@@ -13,5 +13,15 @@ namespace WebApp
         {
 
         }
+
+        protected void BtnVer_Click(object sender, EventArgs e)
+        {
+            int juego = GdJuegos.SelectedIndex;
+            if (juego > 0)
+            {
+                String url = String.Format("FormMantenedorJuegos.aspx?id={0}", juego);
+                Response.Redirect(url);
+            }
+        }
     }
 }

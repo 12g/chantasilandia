@@ -130,10 +130,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Juegos.DALC\Juegos.DALC.csproj">
-      <Project>{f2cbf135-d458-41a4-b0bc-97814e9032b7}</Project>
-      <Name>Juegos.DALC</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Juegos.Negocio\Juegos.Negocio.csproj">
       <Project>{6b3fede4-1b14-4277-b05a-0bb7dd256f2d}</Project>
       <Name>Juegos.Negocio</Name>
