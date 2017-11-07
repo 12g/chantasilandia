@@ -26,7 +26,7 @@ namespace Juegos.Negocio.Colecciones
                 {
                     Id = item.juegoID,
                     Nombre = juego.juegoNombre,
-                    EsTipoCasual = true,
+                    EsTipoCasual = false,
                     Altura = item.juegoExtremoAltura,
                     NivelRiesgo = item.juegoExtremoNivelRiesgo
                 };

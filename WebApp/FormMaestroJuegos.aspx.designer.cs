@@ -10,16 +10,34 @@
 namespace WebApp {
     
     
-    public partial class FormListaJuegos {
+    public partial class FormMaestroJuegos {
         
         /// <summary>
-        /// Control Table1.
+        /// Control MaestroContentTable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Table MaestroContentTable;
+        
+        /// <summary>
+        /// Control TxtFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtFiltro;
+        
+        /// <summary>
+        /// Control BtnFiltrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnFiltrar;
         
         /// <summary>
         /// Control GdJuegosCasuales.
@@ -40,21 +58,12 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.GridView GdJuegosExtremos;
         
         /// <summary>
-        /// Control Button1.
+        /// Control BtnEditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Control Button3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button BtnEditar;
     }
 }

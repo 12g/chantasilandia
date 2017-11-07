@@ -8,10 +8,12 @@ using Juegos.Negocio.Colecciones;
 
 namespace WebApp
 {
-    public partial class FormListaJuegos : System.Web.UI.Page
+    public partial class FormMaestroJuegos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             JuegoCasualCollection listaCasuales = new JuegoCasualCollection();
             GdJuegosCasuales.DataSource = listaCasuales.ReadAll();
             GdJuegosCasuales.DataBind();
@@ -20,6 +22,14 @@ namespace WebApp
             GdJuegosExtremos.DataSource = listaExtremos.ReadAll();
             GdJuegosExtremos.DataBind();
         }
-        
+
+        protected void BtnFiltrar_OnClick(object sender, EventArgs e)
+        {
+            String filtro = TxtFiltro.Text;
+            if (filtro != "")
+            {
+                
+            }
+        }
     }
 }

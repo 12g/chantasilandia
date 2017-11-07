@@ -7,14 +7,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <asp:ContentPlaceHolder ID="ContentHead" runat="server" />
+    <style type="text/css">
+        .div-3 {
+            width: 33%;
+        }
+    </style>
 </head>
 <body>
     <form id="FormMain" runat="server">
-        <h1>Chantasilandia</h1>
-        <h3>¡La diversión fatal!</h3>
-        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapData"></asp:Menu>
-        <asp:SiteMapDataSource ID="SiteMapData" runat="server" />
-        <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td class="div-3">
+                        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapData"></asp:Menu>
+                        <asp:SiteMapDataSource ID="SiteMapData" runat="server" />
+                    </td>
+                    <td style="text-align: center" class="div-3">
+                        <h1>Chantasilandia</h1>
+                        <h3>¡La diversión fatal!</h3>
+                    </td>
+                    <td class="div-3"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
+        </div>
         <br />
     </form>
 </body>

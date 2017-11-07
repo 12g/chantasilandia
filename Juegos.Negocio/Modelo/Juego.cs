@@ -137,12 +137,13 @@ namespace Juegos.Negocio.Modelo
             }
         }
 
+        
         public bool BuscarUno()
         {
             try
             {
                 var consulta = CommonBC.Modelo.Juegos.First
-                    (aux => aux.juegoID == this.Id);
+                    (aux => aux.juegoNombre == this.Nombre || aux.juegoID == this.Id);
 
                 this.Id = consulta.juegoID;
                 this.Nombre = consulta.juegoNombre;

@@ -10,52 +10,70 @@
 namespace WebApp {
     
     
-    public partial class FormAgregarJuego {
+    public partial class FormMantenedorJuegos {
         
         /// <summary>
-        /// Control Table1.
+        /// Control BtnLimpiar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Button BtnLimpiar;
         
         /// <summary>
-        /// Control txtNombre.
+        /// Control TxtID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.Label TxtID;
         
         /// <summary>
-        /// Control ddlTipoJuego.
+        /// Control TxtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoJuego;
+        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
         
         /// <summary>
-        /// Control TxtRiesgo.
+        /// Control BtnBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtRiesgo;
+        protected global::System.Web.UI.WebControls.Button BtnBuscar;
         
         /// <summary>
-        /// Control txtAltura.
+        /// Control DdTipoJuego.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAltura;
+        protected global::System.Web.UI.WebControls.DropDownList DdTipoJuego;
+        
+        /// <summary>
+        /// Control DdNivelRiesgo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdNivelRiesgo;
+        
+        /// <summary>
+        /// Control TxtAltura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtAltura;
         
         /// <summary>
         /// Control ChkRequiereSupervision.
@@ -76,30 +94,39 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.CheckBox ChkPoseeCinturon;
         
         /// <summary>
-        /// Control btnLimpiar.
+        /// Control BtnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLimpiar;
+        protected global::System.Web.UI.WebControls.Button BtnAgregar;
         
         /// <summary>
-        /// Control btnAgregar.
+        /// Control BtnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
+        protected global::System.Web.UI.WebControls.Button BtnActualizar;
         
         /// <summary>
-        /// Control lblResumen.
+        /// Control BtnBorrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResumen;
+        protected global::System.Web.UI.WebControls.Button BtnBorrar;
+        
+        /// <summary>
+        /// Control LblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMensaje;
     }
 }
