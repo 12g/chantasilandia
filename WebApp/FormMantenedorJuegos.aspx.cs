@@ -232,7 +232,7 @@ namespace WebApp
                     }
                     else if (altura == "")
                     {
-                        LblMensaje.Text = "Debe indicar la altura mínima para este juego."
+                        LblMensaje.Text = "Debe indicar la altura mínima para este juego.";
                     }
                     else
                     {
