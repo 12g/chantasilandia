@@ -11,6 +11,24 @@
         .div-3 {
             width: 33%;
         }
+        .table {
+            width: 800px;
+        }
+        .column1 {
+            width: 260px;
+        }
+        .column2 {
+            width: 300px;
+        }
+        .column3 {
+            width: 100px;
+        }
+        .input {
+            width: 280px;
+        }
+        .dropdown {
+            width: 284px;
+        }
     </style>
 </head>
 <body>

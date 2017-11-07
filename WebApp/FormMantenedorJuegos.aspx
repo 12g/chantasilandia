@@ -2,26 +2,7 @@
 
 <asp:Content ID="MantenedorHeadContent" ContentPlaceHolderID="ContentHead" runat="server">
     <title>Mantenedor de Juegos - Chantasilandia</title>
-    <style type="text/css">
-        .table {
-            width: 800px;
-        }
-        .column1 {
-            width: 260px;
-        }
-        .column2 {
-            width: 300px;
-        }
-        .column3 {
-            width: 100px;
-        }
-        .input {
-            width: 280px;
-        }
-        .dropdown {
-            width: 284px;
-        }
-    </style>
+    
 </asp:Content>
 <asp:Content ID="MantenedorContent" ContentPlaceHolderID="ContentBody" runat="server">
     <table class="auto-style3">
