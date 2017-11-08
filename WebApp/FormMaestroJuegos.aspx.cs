@@ -22,14 +22,5 @@ namespace WebApp
             GdJuegosExtremos.DataSource = listaExtremos.ReadAll();
             GdJuegosExtremos.DataBind();
         }
-
-        protected void BtnFiltrar_OnClick(object sender, EventArgs e)
-        {
-            String filtro = txtFiltro.Text;
-            if (filtro != "")
-            {
-                
-            }
-        }
     }
 }
