@@ -138,7 +138,7 @@ namespace Juegos.Negocio.Modelo
             try
             {
                 var cuenta = CommonBC.Modelo.Cuentas.First
-                    (aux => aux.cuentaID == this.Id);
+                    (aux => aux.cuentaID == this.Id || aux.cuentaUsuario == this.Usuario);
 
                 this.Id = cuenta.cuentaID;
                 this.Usuario = cuenta.cuentaUsuario;

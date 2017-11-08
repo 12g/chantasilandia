@@ -24,35 +24,32 @@ namespace WebApp
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtId.Text);
-
-            if (id == 0)
+            String user = txtUser.Text.Trim();
+            
+            Cuenta referencia = new Cuenta();
+            referencia.Usuario = user;
+            if (referencia.BuscarUno())
             {
-                lblMensaje.Text = "id no puede estar vacio";
-
+                btnBuscar_Click(sender, e);
+                lblMensaje.Text = "Esta cuenta ya existe.";
             }
             else
             {
-                Cuenta referencia = new Cuenta();
-                referencia.Id = id;
-                if (referencia.BuscarUno())
+                String password = txtPass.Text;
+
+                if (password.Length < 4)
                 {
-                    btnBuscar_Click(sender, e);
-                    lblMensaje.Text = "Id de ticket ya existe";
+                    lblMensaje.Text = "La contraseña no puede poseer menos de 4 caracteres";
                 }
                 else
                 {
-                    Cuenta ct = new Cuenta();
+                    referencia.Contraseña = password;
 
-                    ct.Id = int.Parse(txtId.Text);
-                    ct.Usuario = txtUser.Text;
-                    ct.Contraseña = txtPass.Text;
-
-                    if (ct.BuscarUno())
+                    if (referencia.Crear())
                     {
                         referencia.BuscarUno();
                         txtId.Text = referencia.Id.ToString();
-                        lblMensaje.Text = "Ticket creado exitosamente";
+                        lblMensaje.Text = "Cuenta creada exitosamente";
                         btnActualizar.Enabled = true;
                         btnBorrar.Enabled = true;
                         btnAgregar.Enabled = false;
@@ -63,36 +60,33 @@ namespace WebApp
                         lblMensaje.Text = "Ticket no pudo ser creado";
                     }
                 }
-
             }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            int filtro = int.Parse(txtId.Text);
+            string filtro = txtUser.Text.Trim();
 
-            if (filtro == int.Parse(""))
+            if (filtro == "")
             {
-                lblMensaje.Text = "Debe ingresar un id";
+                lblMensaje.Text = "Debe ingresar un nombre";
             }
             else
             {
-                Cuenta ct = new Cuenta();
                 bool success;
+                Cuenta ct = new Cuenta();
+                ct.Usuario = filtro;
 
-                ct.Id = filtro;
                 if (success = ct.BuscarUno())
                 {
                     txtId.Text = ct.Id.ToString();
-                    txtUser.Text = ct.Usuario.ToString();
-                    txtPass.Text = ct.Contraseña.ToString();
-
+                    txtUser.Text = ct.Usuario;
+                    txtPass.Text = ct.Contraseña;
+                    lblMensaje.Text = "Los datos de la cuenta fueron cargados";
                 }
                 else
                 {
-                    btnLimpiar_Click(sender, e);
-                    filtro = int.Parse(txtId.Text);
-                    lblMensaje.Text = "La cuenta no pudo ser encontrada.";
+                    lblMensaje.Text = "No existe una cuenta con este nombre.";
                 }
 
                 btnActualizar.Enabled = success;
@@ -104,17 +98,13 @@ namespace WebApp
 
         protected void btnBorrar_Click(object sender, EventArgs e)
         {
-
             bool success = false;
             Cuenta ct = new Cuenta();
-
             ct.Id = int.Parse(txtId.Text);
+
             if (ct.BuscarUno())
             {
-                Ticket tk = new Ticket();
-                tk.Id = int.Parse(txtId.Text);
-                success = tk.Delete();
-
+                success = ct.Delete();
             }
 
             if (success)
@@ -130,35 +120,34 @@ namespace WebApp
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtId.Text);
+            String usuario = txtUser.Text.Trim();
+            String password = txtPass.Text.Trim();
 
-
-            if (id == int.Parse(""))
+            if (usuario == "")
             {
-                lblMensaje.Text = "Debe ingresar un id.";
+                lblMensaje.Text = "Debe ingresar un nombre de usuario.";
             }
-
-            else
+            else if (password == "")
             {
-                bool success = false;
-
-
-                Cuenta referencia = new Cuenta();
-                referencia.Id = int.Parse(txtId.Text);
-                referencia.BuscarUno();
-
-
-                Cuenta tk = new Cuenta
-                {
-                    Id = referencia.Id,
-                    Usuario = txtUser.Text,
-                    Contraseña = txtPass.Text
-
+                lblMensaje.Text = "Debe ingresar una contraseña.";
+            }
+            else { 
+                Cuenta cuenta = new Cuenta { 
+                    Id = int.Parse(txtId.Text),
+                    Usuario = usuario,
+                    Contraseña = password
                 };
 
-                success = tk.Update();
+                if (cuenta.Update())
+                {
+                    lblMensaje.Text = "Datos de la cuenta actualizados exitosamente.";
+                }
+                else
+                {
+                    lblMensaje.Text = "No se pudo actualizar la cuenta.";
+                }
             }
         }
     }
 }
-    
+

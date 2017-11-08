@@ -17,45 +17,31 @@ namespace WebApp
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtId.Text);
+            String precio = txtValor.Text.Trim();
 
-            if (id == 0)
+            if (precio == "")
             {
-                lblMensaje.Text = "id no puede estar vacio";
-
+                lblMensaje.Text = "Debe asignar un precio.";
             }
             else
             {
-                Ticket referencia = new Ticket();
-                referencia.Id = id;
-                if (referencia.BuscarUno())
+                Ticket ticket = new Ticket();
+                ticket.Valor = int.Parse(precio);
+
+                if (ticket.Crear())
                 {
-                    btnBuscar_Click(sender, e);
-                    lblMensaje.Text = "Id de ticket ya existe";
+                    ticket.BuscarUno();
+                    txtId.Text = ticket.Id.ToString();
+                    lblMensaje.Text = "Ticket creado exitosamente.";
+                    btnActualizar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    btnAgregar.Enabled = false;
                 }
                 else
                 {
-                    Ticket tc = new Ticket();
 
-                    tc.Id = int.Parse(txtId.Text);
-                    tc.Valor = int.Parse(txtValor.Text);
-
-                    if (tc.BuscarUno())
-                    {
-                        referencia.BuscarUno();
-                        txtId.Text = referencia.Id.ToString();
-                        lblMensaje.Text = "Ticket creado exitosamente";
-                        btnActualizar.Enabled = true;
-                        btnEliminar.Enabled = true;
-                        btnAgregar.Enabled = false;
-                    }
-                    else
-                    {
-
-                        lblMensaje.Text = "Ticket no pudo ser creado";
-                    }
+                    lblMensaje.Text = "Ticket no pudo ser creado";
                 }
-
             }
         }
 
@@ -70,29 +56,27 @@ namespace WebApp
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            int filtro = int.Parse(txtId.Text);
+            String filtro = txtId.Text.Trim();
 
-            if (filtro == int.Parse(""))
+            if (filtro == "")
             {
-                lblMensaje.Text = "Debe ingresar un id";
+                lblMensaje.Text = "Debe ingresar un número ID del ticket.";
             }
             else
             {
                 Ticket tc = new Ticket();
                 bool success;
 
-                tc.Id = filtro;
+                tc.Id = int.Parse(filtro);
                 if (success = tc.BuscarUno())
                 {
                     txtId.Text = tc.Id.ToString();
                     txtValor.Text = tc.Valor.ToString();
-
+                    lblMensaje.Text = "Ticket encontrado.";
                 }
                 else
                 {
-                    btnLimpiar_Click(sender, e);
-                    filtro = int.Parse(txtId.Text);
-                    lblMensaje.Text = "El juego no pudo ser encontrado.";
+                    lblMensaje.Text = "No existe un ticket con este ID.";
                 }
 
                 btnActualizar.Enabled = success;
@@ -161,4 +145,4 @@ namespace WebApp
         }
     }
 }
-               
+

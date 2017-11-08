@@ -13,109 +13,113 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DdTipoJuego_SelectedIndexChanged(sender, e); //deshabilitar los controles segun corresponda
+            ddTipoJuego_SelectedIndexChanged(sender, e); //deshabilitar los controles segun corresponda
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            TxtID.Text = "";
-            TxtNombre.Text = "";
-            DdTipoJuego.SelectedValue = "";
-            DdNivelRiesgo.SelectedValue = "";
-            TxtAltura.Text = "";
-            ChkPoseeCinturon.Checked = false;
-            ChkRequiereSupervision.Checked = false;
-            BtnBorrar.Enabled = false;
-            BtnActualizar.Enabled = false;
-            BtnAgregar.Enabled = true;
-            DdTipoJuego_SelectedIndexChanged(sender, e);
+            txtID.Text = "";
+            txtNombre.Text = "";
+            ddTipoJuego.SelectedValue = "";
+            ddNivelRiesgo.SelectedValue = "";
+            txtAltura.Text = "";
+            chkPoseeCinturon.Checked = false;
+            chkRequiereSupervision.Checked = false;
+            btnBorrar.Enabled = false;
+            btnActualizar.Enabled = false;
+            btnAgregar.Enabled = true;
+            ddTipoJuego_SelectedIndexChanged(sender, e);
         }
 
-        protected void BtnAgregar_Click(object sender, EventArgs e)
+        protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            String nombre = TxtNombre.Text;
-            bool tipoCasual = DdTipoJuego.SelectedValue == "1";
+            String nombre = txtNombre.Text.Trim();
 
             if (nombre == "")
             {
-                LblMensaje.Text = "El nombre no debe estar en blanco.";
+                lblMensaje.Text = "El nombre no debe estar en blanco.";
+            }
+            else if (ddTipoJuego.SelectedValue == "")
+            {
+                lblMensaje.Text = "Debe elegir un tipo de juego.";
             }
             else
             {
+                bool tipoCasual = ddTipoJuego.SelectedValue == "1";
                 Juego referencia = new Juego();
                 referencia.Nombre = nombre;
                 if (referencia.BuscarUno())
                 {
-                    BtnBuscar_Click(sender, e);
-                    LblMensaje.Text = "Ya existe un juego con este nombre.";
+                    btnBuscar_Click(sender, e);
+                    lblMensaje.Text = "Ya existe un juego con este nombre.";
                 }
                 else if (!tipoCasual)
                 {
                     JuegoExtremo jExtremo = new JuegoExtremo();
 
-                    jExtremo.Nombre = TxtNombre.Text;
-                    jExtremo.NivelRiesgo = DdNivelRiesgo.SelectedIndex;
-                    jExtremo.Altura = int.Parse(TxtAltura.Text);
+                    jExtremo.Nombre = txtNombre.Text;
+                    jExtremo.NivelRiesgo = ddNivelRiesgo.SelectedIndex;
+                    jExtremo.Altura = int.Parse(txtAltura.Text);
 
                     if (jExtremo.Crear())
                     {
                         referencia.BuscarUno();
-                        TxtID.Text = referencia.Id.ToString();
-                        LblMensaje.Text = "El juego extremo fue creado exitosamente";
-                        BtnActualizar.Enabled = true;
-                        BtnBorrar.Enabled = true;
-                        BtnAgregar.Enabled = false;
+                        txtID.Text = referencia.Id.ToString();
+                        lblMensaje.Text = "El juego extremo fue creado exitosamente";
+                        btnActualizar.Enabled = true;
+                        btnBorrar.Enabled = true;
+                        btnAgregar.Enabled = false;
                     }
                     else
                     {
-                        LblMensaje.Text = "La creación del juego extremo falló.";
+                        lblMensaje.Text = "La creación del juego extremo falló.";
                     }
                 }
                 else
                 {
                     JuegoCasual jCasual = new JuegoCasual();
 
-                    jCasual.Nombre = TxtNombre.Text;
-                    jCasual.PoseeCinturon = ChkPoseeCinturon.Checked;
-                    jCasual.RequiereSupervision = ChkRequiereSupervision.Checked;
+                    jCasual.Nombre = txtNombre.Text;
+                    jCasual.PoseeCinturon = chkPoseeCinturon.Checked;
+                    jCasual.RequiereSupervision = chkRequiereSupervision.Checked;
 
                     if (jCasual.Crear())
                     {
                         referencia.BuscarUno();
-                        TxtID.Text = referencia.Id.ToString();
-                        LblMensaje.Text = "El juego casual fue creado exitosamente";
-                        BtnActualizar.Enabled = true;
-                        BtnBorrar.Enabled = true;
-                        BtnAgregar.Enabled = false;
+                        txtID.Text = referencia.Id.ToString();
+                        lblMensaje.Text = "El juego casual fue creado exitosamente";
+                        btnActualizar.Enabled = true;
+                        btnBorrar.Enabled = true;
+                        btnAgregar.Enabled = false;
                     }
                     else
                     {
-                        LblMensaje.Text = "La creación del juego casual falló.";
+                        lblMensaje.Text = "La creación del juego casual falló.";
                     }
                 }
             }
         }
 
 
-        protected void DdTipoJuego_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddTipoJuego_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool tipoCasual = DdTipoJuego.SelectedValue == "1";
-            bool tipoExtremo = DdTipoJuego.SelectedValue == "0";
+            bool tipoCasual = ddTipoJuego.SelectedValue == "1";
+            bool tipoExtremo = ddTipoJuego.SelectedValue == "0";
 
-            DdNivelRiesgo.Enabled = tipoExtremo;
-            TxtAltura.Enabled = tipoExtremo;
-            ChkPoseeCinturon.Enabled = tipoCasual;
-            ChkRequiereSupervision.Enabled = tipoCasual;
+            ddNivelRiesgo.Enabled = tipoExtremo;
+            txtAltura.Enabled = tipoExtremo;
+            chkPoseeCinturon.Enabled = tipoCasual;
+            chkRequiereSupervision.Enabled = tipoCasual;
         }
 
-        protected void BtnBuscar_Click(object sender, EventArgs e)
+        protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            String filtro = TxtNombre.Text;
+            String filtro = txtNombre.Text.Trim();
 
             if (filtro == "")
             {
-                LblMensaje.Text = "Debe ingresar un nombre.";
+                lblMensaje.Text = "Debe ingresar un nombre.";
             }
             else
             {
@@ -125,63 +129,63 @@ namespace WebApp
                 juego.Nombre = filtro; //para buscar un juego a nivel general, usamos el nombre
                 if (success = juego.BuscarUno())
                 {
-                    TxtID.Text = juego.Id.ToString(); //de este nombre sacamos el ID y lo mostramos
-                    TxtNombre.Text = juego.Nombre;
-                    DdTipoJuego.SelectedValue = (juego.EsTipoCasual) ? "1" : "0";
+                    txtID.Text = juego.Id.ToString(); //de este nombre sacamos el ID y lo mostramos
+                    txtNombre.Text = juego.Nombre;
+                    ddTipoJuego.SelectedValue = (juego.EsTipoCasual) ? "1" : "0";
                     if (juego.EsTipoCasual)
                     {
                         JuegoCasual subtipo = new JuegoCasual();
                         subtipo.Id = juego.Id;
                         success = subtipo.BuscarUno(); //para ubicar la subclase con datos especificos usamos el ID
-                        ChkPoseeCinturon.Checked = subtipo.PoseeCinturon;
-                        ChkRequiereSupervision.Checked = subtipo.RequiereSupervision;
+                        chkPoseeCinturon.Checked = subtipo.PoseeCinturon;
+                        chkRequiereSupervision.Checked = subtipo.RequiereSupervision;
                     }
                     else
                     {
                         JuegoExtremo subtipo = new JuegoExtremo();
                         subtipo.Id = juego.Id;
                         success = subtipo.BuscarUno(); //para ubicar la subclase con datos especificos usamos el ID
-                        DdNivelRiesgo.SelectedValue = subtipo.NivelRiesgo.ToString();
-                        TxtAltura.Text = subtipo.Altura.ToString();
+                        ddNivelRiesgo.SelectedValue = subtipo.NivelRiesgo.ToString();
+                        txtAltura.Text = subtipo.Altura.ToString();
                     }
 
                     if (!success)
                     {
                         BtnLimpiar_Click(sender, e);
-                        TxtNombre.Text = filtro;
-                        LblMensaje.Text = "Hubo un problema al cargar la información (el juego no se encuentra en tabla subtipo correspondiente).";
+                        txtNombre.Text = filtro;
+                        lblMensaje.Text = "Hubo un problema al cargar la información (el juego no se encuentra en tabla subtipo correspondiente).";
                     }
                     else
                     {
-                        LblMensaje.Text = "";
+                        lblMensaje.Text = "";
                     }
                 }
                 else
                 {
                     BtnLimpiar_Click(sender, e);
-                    TxtNombre.Text = filtro;
-                    LblMensaje.Text = "El juego no pudo ser encontrado.";
+                    txtNombre.Text = filtro;
+                    lblMensaje.Text = "El juego no pudo ser encontrado.";
                 }
 
-                BtnActualizar.Enabled = success;
-                BtnBorrar.Enabled = success;
-                BtnAgregar.Enabled = !success;
-                DdTipoJuego_SelectedIndexChanged(sender, e);
+                btnActualizar.Enabled = success;
+                btnBorrar.Enabled = success;
+                btnAgregar.Enabled = !success;
+                ddTipoJuego_SelectedIndexChanged(sender, e);
             }
         }
 
-        protected void BtnActualizar_Click(object sender, EventArgs e)
+        protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            String nombre = TxtNombre.Text;
-            String tipo = DdTipoJuego.SelectedValue;
+            String nombre = txtNombre.Text.Trim();
+            String tipo = ddTipoJuego.SelectedValue;
 
             if (nombre == "")
             {
-                LblMensaje.Text = "Debe ingresar un nombre.";
+                lblMensaje.Text = "Debe ingresar un nombre.";
             }
             else if (tipo == "")
             {
-                LblMensaje.Text = "Debe ingresar un tipo";
+                lblMensaje.Text = "Debe ingresar un tipo";
             }
             else
             {
@@ -190,7 +194,7 @@ namespace WebApp
 
                 //este metodo asume que el ID se muestra en el formulario
                 Juego referencia = new Juego();
-                referencia.Id = int.Parse(TxtID.Text);
+                referencia.Id = int.Parse(txtID.Text);
                 referencia.BuscarUno();
 
                 if (referencia.EsTipoCasual)
@@ -198,9 +202,9 @@ namespace WebApp
                     JuegoCasual juego = new JuegoCasual
                     {
                         Id = referencia.Id,
-                        Nombre = TxtNombre.Text,
-                        RequiereSupervision = ChkRequiereSupervision.Checked,
-                        PoseeCinturon = ChkPoseeCinturon.Checked
+                        Nombre = txtNombre.Text,
+                        RequiereSupervision = chkRequiereSupervision.Checked,
+                        PoseeCinturon = chkPoseeCinturon.Checked
                     };
 
                     if (tipo == "1") //si el formulario dice que sea casual tambien
@@ -214,32 +218,32 @@ namespace WebApp
                         JuegoExtremo nuevo = new JuegoExtremo
                         {
                             Id = referencia.Id,
-                            Nombre = TxtNombre.Text,
-                            Altura = int.Parse(TxtAltura.Text),
-                            NivelRiesgo = int.Parse(DdNivelRiesgo.SelectedValue)
+                            Nombre = txtNombre.Text,
+                            Altura = int.Parse(txtAltura.Text),
+                            NivelRiesgo = int.Parse(ddNivelRiesgo.SelectedValue)
                         };
                         success = nuevo.Crear(); //y creamos el nuevo casual
                     }
                 }
                 else
                 {
-                    String riesgo = DdNivelRiesgo.SelectedValue;
-                    String altura = TxtAltura.Text;
+                    String riesgo = ddNivelRiesgo.SelectedValue;
+                    String altura = txtAltura.Text;
 
                     if (riesgo == "")
                     {
-                        LblMensaje.Text = "Debe seleccionar un nivel de riesgo.";
+                        lblMensaje.Text = "Debe seleccionar un nivel de riesgo.";
                     }
                     else if (altura == "")
                     {
-                        LblMensaje.Text = "Debe indicar la altura mínima para este juego.";
+                        lblMensaje.Text = "Debe indicar la altura mínima para este juego.";
                     }
                     else
                     {
                         JuegoExtremo juego = new JuegoExtremo
                         {
                             Id = referencia.Id,
-                            Nombre = TxtNombre.Text,
+                            Nombre = txtNombre.Text,
                             NivelRiesgo = int.Parse(riesgo),
                             Altura = int.Parse(altura)
                         };
@@ -255,9 +259,9 @@ namespace WebApp
                             JuegoCasual nuevo = new JuegoCasual
                             {
                                 Id = referencia.Id,
-                                Nombre = TxtNombre.Text,
-                                RequiereSupervision = ChkRequiereSupervision.Checked,
-                                PoseeCinturon = ChkPoseeCinturon.Checked
+                                Nombre = txtNombre.Text,
+                                RequiereSupervision = chkRequiereSupervision.Checked,
+                                PoseeCinturon = chkPoseeCinturon.Checked
                             };
                             success = nuevo.Crear(); //y creamos el nuevo extremo
                         }
@@ -266,34 +270,34 @@ namespace WebApp
 
                 if (success)
                 {
-                    LblMensaje.Text = "Actualización de datos completada.";
+                    lblMensaje.Text = "Actualización de datos completada.";
                 }
                 else
                 {
-                    LblMensaje.Text = "Fallo al actualizar información.";
+                    lblMensaje.Text = "Fallo al actualizar información.";
                 }
 
             }
         }
 
-        protected void BtnBorrar_Click(object sender, EventArgs e)
+        protected void btnBorrar_Click(object sender, EventArgs e)
         {
             bool success = false;
             Juego juego = new Juego();
 
-            juego.Id = int.Parse(TxtID.Text); //lo unico que necesitamos es el ID, pues
+            juego.Id = int.Parse(txtID.Text); //lo unico que necesitamos es el ID, pues
             if (juego.BuscarUno()) //sacamos la informacion de la base de datos misma
             {
                 if (!juego.EsTipoCasual)
                 {
                     JuegoExtremo subtipo = new JuegoExtremo();
-                    subtipo.Id = int.Parse(TxtID.Text);
+                    subtipo.Id = int.Parse(txtID.Text);
                     success = subtipo.Delete();
                 }
                 else
                 {
                     JuegoCasual subtipo = new JuegoCasual();
-                    subtipo.Id = int.Parse(TxtID.Text);
+                    subtipo.Id = int.Parse(txtID.Text);
                     success = subtipo.Delete();
                 }
             }
@@ -301,11 +305,11 @@ namespace WebApp
             if (success)
             {
                 BtnLimpiar_Click(sender, e);
-                LblMensaje.Text = "Eliminación exitosa.";
+                lblMensaje.Text = "Eliminación exitosa.";
             }
             else
             {
-                LblMensaje.Text = "No se pudo eliminar el juego.";
+                lblMensaje.Text = "No se pudo eliminar el juego.";
             }
         }
     }

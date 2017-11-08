@@ -18,8 +18,6 @@ namespace WebApp
             GdTickets.DataSource = listaTickets.ReadAll();
             GdTickets.DataBind();
 
-
-
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.Master" CodeBehind="FormMaestroTickets.aspx.cs" Inherits="WebApp.FormMaestroticket" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
-    <title>Maestro de Juegos - Chantasilandia</title>
+    <title>Maestro de Tickets - Chantasilandia</title>
 </asp:Content>
 <asp:Content ID="MaestroContent" ContentPlaceHolderID="ContentBody" runat="server">
     <table id="MaestroContentTable" class="table">
