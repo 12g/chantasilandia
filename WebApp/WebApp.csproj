@@ -66,8 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FormMaestroCuenta.aspx" />
+    <Content Include="FormMaestroticket.aspx" />
+    <Content Include="FormMantenedorCuenta.aspx" />
     <Content Include="FormMantenedorJuegos.aspx" />
     <Content Include="FormMaestroJuegos.aspx" />
+    <Content Include="FormMantenedorTicket.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
@@ -85,6 +89,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMaestroCuenta.aspx.cs">
+      <DependentUpon>FormMaestroCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormMaestroCuenta.aspx.designer.cs">
+      <DependentUpon>FormMaestroCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormMaestroticket.aspx.cs">
+      <DependentUpon>FormMaestroticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormMaestroticket.aspx.designer.cs">
+      <DependentUpon>FormMaestroticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenedorCuenta.aspx.cs">
+      <DependentUpon>FormMantenedorCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormMantenedorCuenta.aspx.designer.cs">
+      <DependentUpon>FormMantenedorCuenta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FormMantenedorJuegos.aspx.cs">
       <DependentUpon>FormMantenedorJuegos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,6 +123,13 @@
     </Compile>
     <Compile Include="FormMaestroJuegos.aspx.designer.cs">
       <DependentUpon>FormMaestroJuegos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenedorTicket.aspx.cs">
+      <DependentUpon>FormMantenedorTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormMantenedorTicket.aspx.designer.cs">
+      <DependentUpon>FormMantenedorTicket.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

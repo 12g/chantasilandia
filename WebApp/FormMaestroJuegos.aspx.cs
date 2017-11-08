@@ -25,7 +25,7 @@ namespace WebApp
 
         protected void BtnFiltrar_OnClick(object sender, EventArgs e)
         {
-            String filtro = TxtFiltro.Text;
+            String filtro = txtFiltro.Text;
             if (filtro != "")
             {
                 

@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="BtnEditar" runat="server" Text="Ver Detalles" />
+                    <asp:Button ID="BtnEditar" runat="server" Text="Ver Detalles" OnClick="BtnEditar_Click" />
                 </td>
             </tr>
         </tbody>
