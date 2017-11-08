@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormMantenedorTicket.aspx.cs" Inherits="WebApp.FormMantenedorTicket" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormMantenedorTickets.aspx.cs" Inherits="WebApp.FormMantenedorTicket" %>
 
 <!DOCTYPE html>
 

@@ -5,5 +5,13 @@
       <siteMapNode url="FormMaestroJuegos.aspx" title="Maestro"  description="" />
       <siteMapNode url="FormMantenedorJuegos.aspx" title="Mantenedor"  description="" />
     </siteMapNode>
+    <siteMapNode title="Cuentas">
+      <siteMapNode url="FormMaestroCuentas.aspx" title="Maestro"  description="" />
+      <siteMapNode url="FormMantenedorCuentas.aspx" title="Mantenedor"  description="" />
+    </siteMapNode>
+    <siteMapNode title="Tickets">
+      <siteMapNode url="FormMaestroTickets.aspx" title="Maestro"  description="" />
+      <siteMapNode url="FormMantenedorTickets.aspx" title="Mantenedor"  description="" />
+    </siteMapNode>
   </siteMapNode>
 </siteMap>

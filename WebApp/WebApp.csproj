@@ -66,12 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FormMaestroCuenta.aspx" />
-    <Content Include="FormMaestroticket.aspx" />
-    <Content Include="FormMantenedorCuenta.aspx" />
+    <Content Include="FormMaestroCuentas.aspx" />
+    <Content Include="FormMaestroTickets.aspx" />
+    <Content Include="FormMantenedorCuentas.aspx" />
     <Content Include="FormMantenedorJuegos.aspx" />
     <Content Include="FormMaestroJuegos.aspx" />
-    <Content Include="FormMantenedorTicket.aspx" />
+    <Content Include="FormMantenedorTickets.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
@@ -89,26 +89,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMaestroCuenta.aspx.cs">
-      <DependentUpon>FormMaestroCuenta.aspx</DependentUpon>
+    <Compile Include="FormMaestroCuentas.aspx.cs">
+      <DependentUpon>FormMaestroCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormMaestroCuenta.aspx.designer.cs">
-      <DependentUpon>FormMaestroCuenta.aspx</DependentUpon>
+    <Compile Include="FormMaestroCuentas.aspx.designer.cs">
+      <DependentUpon>FormMaestroCuentas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormMaestroticket.aspx.cs">
-      <DependentUpon>FormMaestroticket.aspx</DependentUpon>
+    <Compile Include="FormMaestroTickets.aspx.cs">
+      <DependentUpon>FormMaestroTickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormMaestroticket.aspx.designer.cs">
-      <DependentUpon>FormMaestroticket.aspx</DependentUpon>
+    <Compile Include="FormMaestroTickets.aspx.designer.cs">
+      <DependentUpon>FormMaestroTickets.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormMantenedorCuenta.aspx.cs">
-      <DependentUpon>FormMantenedorCuenta.aspx</DependentUpon>
+    <Compile Include="FormMantenedorCuentas.aspx.cs">
+      <DependentUpon>FormMantenedorCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormMantenedorCuenta.aspx.designer.cs">
-      <DependentUpon>FormMantenedorCuenta.aspx</DependentUpon>
+    <Compile Include="FormMantenedorCuentas.aspx.designer.cs">
+      <DependentUpon>FormMantenedorCuentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormMantenedorJuegos.aspx.cs">
       <DependentUpon>FormMantenedorJuegos.aspx</DependentUpon>
@@ -124,12 +124,12 @@
     <Compile Include="FormMaestroJuegos.aspx.designer.cs">
       <DependentUpon>FormMaestroJuegos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormMantenedorTicket.aspx.cs">
-      <DependentUpon>FormMantenedorTicket.aspx</DependentUpon>
+    <Compile Include="FormMantenedorTickets.aspx.cs">
+      <DependentUpon>FormMantenedorTickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormMantenedorTicket.aspx.designer.cs">
-      <DependentUpon>FormMantenedorTicket.aspx</DependentUpon>
+    <Compile Include="FormMantenedorTickets.aspx.designer.cs">
+      <DependentUpon>FormMantenedorTickets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
