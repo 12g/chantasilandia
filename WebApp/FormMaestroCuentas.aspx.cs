@@ -14,9 +14,9 @@ namespace WebApp
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
-            CuentaCollection listaCuenta = new CuentaCollection();
-            GwCuenta.DataSource = listaCuenta.ReadAll();
-            GwCuenta.DataBind();
+            CuentaCollection listaCuentas = new CuentaCollection();
+            GdCuentas.DataSource = listaCuentas.ReadAll();
+            GdCuentas.DataBind();
         }
     }
 }

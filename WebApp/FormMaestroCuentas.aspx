@@ -14,7 +14,7 @@
             <tr>
                 <td>
                     <asp:Label runat="server" Font-Size="Large">Tickets</asp:Label>
-                    <asp:GridView ID="GwCuenta" runat="server"></asp:GridView>
+                    <asp:GridView ID="GdCuentas" runat="server"></asp:GridView>
                 </td>
             </tr>
         </tbody>

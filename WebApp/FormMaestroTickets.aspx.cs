@@ -14,9 +14,9 @@ namespace WebApp
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
-            TicketCollection listaTicket = new TicketCollection();
-            GwTicket.DataSource = listaTicket.ReadAll();
-            GwTicket.DataBind();
+            TicketCollection listaTickets = new TicketCollection();
+            GdTickets.DataSource = listaTickets.ReadAll();
+            GdTickets.DataBind();
 
 
 

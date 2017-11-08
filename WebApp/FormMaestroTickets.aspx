@@ -14,7 +14,7 @@
             <tr>
                 <td>
                     <asp:Label runat="server" Font-Size="Large">Tickets</asp:Label>
-                    <asp:GridView ID="GwTicket" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2"></asp:GridView>
+                    <asp:GridView ID="GdTickets" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2"></asp:GridView>
                 </td>
             </tr>
         </tbody>
