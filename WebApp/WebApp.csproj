@@ -85,7 +85,6 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LoginForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -137,13 +136,6 @@
     </Compile>
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LoginForm.aspx.cs">
-      <DependentUpon>LoginForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoginForm.aspx.designer.cs">
-      <DependentUpon>LoginForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
