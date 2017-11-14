@@ -89,5 +89,80 @@ namespace Juegos.Servicio
                 return false;
             }
         }
+
+        public bool CrearJuegoExtremoServicio(string nombre, int altura, int nivelRiesgo)
+        {
+            try
+            {
+                JuegoExtremo juego = new JuegoExtremo
+                {
+                    Nombre = nombre,
+                    EsTipoCasual = false,
+                    Altura = altura,
+                    NivelRiesgo = nivelRiesgo
+                };
+
+                return juego.Update();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateJuegoExtremoServicio(int id, string nombre, int altura, int nivelRiesgo)
+        {
+            try
+            {
+                JuegoExtremo juego = new JuegoExtremo
+                {
+                    Id = id,
+                    Nombre = nombre,
+                    EsTipoCasual = false,
+                    Altura = altura,
+                    NivelRiesgo = nivelRiesgo
+                };
+
+                return juego.Update();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteJuegoExtremoServicio(int id)
+        {
+            try
+            {
+                JuegoExtremo juego = new JuegoExtremo
+                {
+                    Id = id
+                };
+
+                return juego.Delete();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool BuscarUnoJuegoExtremoServicio(int id)
+        {
+            try
+            {
+                JuegoExtremo juego = new JuegoExtremo
+                {
+                    Id = id
+                };
+
+                return juego.BuscarUno();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

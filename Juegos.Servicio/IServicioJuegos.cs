@@ -24,5 +24,18 @@ namespace Juegos.Servicio
         [OperationContract]
         bool BuscarUnoJuegoCasualServicio(int id);
 
+
+        [OperationContract]
+        bool CrearJuegoExtremoServicio(string nombre, int altura, int nivelRiesgo);
+
+        [OperationContract]
+        bool UpdateJuegoExtremoServicio(int id, string nombre, int altura, int nivelRiesgo);
+
+        [OperationContract]
+        bool DeleteJuegoExtremoServicio(int id);
+
+        [OperationContract]
+        bool BuscarUnoJuegoExtremoServicio(int id);
+
     }
 }
