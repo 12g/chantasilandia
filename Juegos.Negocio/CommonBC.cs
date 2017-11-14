@@ -7,7 +7,7 @@ using Juegos.DALC;
 
 namespace Juegos.Negocio
 {
-    class CommonBC
+    public class CommonBC
     {
         private static masterEntities _modelo;
         
