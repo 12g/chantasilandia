@@ -11,7 +11,9 @@ namespace Juegos.Negocio.Modelo
         #region campos
         private int _id;
         private int _valor;
+        #endregion
 
+        #region propiedades
         public int Id
         {
             get
@@ -38,8 +40,6 @@ namespace Juegos.Negocio.Modelo
             }
         }
         #endregion
-
-
 
         public Ticket()
         {

@@ -75,6 +75,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SvcTickets\ServicioTickets.disco" />
+    <None Include="Connected Services\SvcTickets\configuration91.svcinfo" />
+    <None Include="Connected Services\SvcTickets\configuration.svcinfo" />
+    <None Include="Connected Services\SvcTickets\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="FormMaestroCuentas.aspx" />
     <Content Include="FormMaestroTickets.aspx" />
     <Content Include="FormMantenedorCuentas.aspx" />
@@ -93,11 +100,22 @@
     <None Include="Connected Services\SvcJuegos\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SvcTickets\ServicioTickets.wsdl" />
+    <None Include="Connected Services\SvcTickets\ServicioTickets.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SvcTickets\ServicioTickets1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SvcTickets\ServicioTickets2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="Cuentas.xml" />
     <Content Include="Properties\DataSources\Juegos.Negocio.Modelo.Juego.datasource" />
     <Content Include="Properties\DataSources\Juegos.Negocio.Modelo.JuegoCasual.datasource" />
     <Content Include="Properties\DataSources\Juegos.Negocio.Modelo.JuegoExtremo.datasource" />
+    <Content Include="Properties\DataSources\Juegos.Negocio.Modelo.Ticket.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,6 +129,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\SvcJuegos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SvcTickets\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -184,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\SvcJuegos\" />
+    <WCFMetadataStorage Include="Connected Services\SvcTickets\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

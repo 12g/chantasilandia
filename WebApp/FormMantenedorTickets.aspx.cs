@@ -17,21 +17,20 @@ namespace WebApp
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            String id = txtId.Text.Trim();
             String precio = txtValor.Text.Trim();
 
-            if (precio == "")
+            if (id == "" || precio == "")
             {
-                lblMensaje.Text = "Debe asignar un precio.";
+                lblMensaje.Text = "Debe asignar un ID y un precio.";
             }
             else
             {
-                Ticket ticket = new Ticket();
-                ticket.Valor = int.Parse(precio);
+                SvcTickets.ServicioTicketsClient servicio = new SvcTickets.ServicioTicketsClient();
+                bool creado = servicio.CrearTicketServicio(int.Parse(id), int.Parse(precio));
 
-                if (ticket.Crear())
+                if (creado)
                 {
-                    ticket.BuscarUno();
-                    txtId.Text = ticket.Id.ToString();
                     lblMensaje.Text = "Ticket creado exitosamente.";
                     btnActualizar.Enabled = true;
                     btnEliminar.Enabled = true;
@@ -51,27 +50,26 @@ namespace WebApp
         {
             txtId.Text = "";
             txtValor.Text = "";
-
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            String filtro = txtId.Text.Trim();
+            String id = txtId.Text.Trim();
 
-            if (filtro == "")
+            if (id == "")
             {
                 lblMensaje.Text = "Debe ingresar un número ID del ticket.";
             }
             else
             {
-                Ticket tc = new Ticket();
-                bool success;
-
-                tc.Id = int.Parse(filtro);
-                if (success = tc.BuscarUno())
+                SvcTickets.ServicioTicketsClient servicio = new SvcTickets.ServicioTicketsClient();
+                Juegos.Negocio.Modelo.Ticket ticket = servicio.BuscarUnoTicketServicio(int.Parse(id));
+                bool encontrado = (ticket != null);
+                
+                if (encontrado)
                 {
-                    txtId.Text = tc.Id.ToString();
-                    txtValor.Text = tc.Valor.ToString();
+                    txtId.Text = ticket.Id.ToString();
+                    txtValor.Text = ticket.Valor.ToString();
                     lblMensaje.Text = "Ticket encontrado.";
                 }
                 else
@@ -79,68 +77,70 @@ namespace WebApp
                     lblMensaje.Text = "No existe un ticket con este ID.";
                 }
 
-                btnActualizar.Enabled = success;
-                btnEliminar.Enabled = success;
-                btnAgregar.Enabled = !success;
+                btnActualizar.Enabled = encontrado;
+                btnEliminar.Enabled = encontrado;
+                btnAgregar.Enabled = !encontrado;
 
             }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            bool success = false;
-            Ticket tc = new Ticket();
+            String id = txtId.Text;
 
-            tc.Id = int.Parse(txtId.Text);
-            if (tc.BuscarUno())
+            if (id == "null")
             {
-                Ticket tk = new Ticket();
-                tk.Id = int.Parse(txtId.Text);
-                success = tk.Delete();
-
-            }
-
-            if (success)
-            {
-                btnLimpiar_Click(sender, e);
-                lblMensaje.Text = "Eliminación exitosa.";
+                lblMensaje.Text = "Debe ingresar un ID.";
             }
             else
             {
-                lblMensaje.Text = "No se pudo eliminar el juego.";
+                SvcTickets.ServicioTicketsClient servicio = new SvcTickets.ServicioTicketsClient();
+                bool encontrado = (servicio.BuscarUnoTicketServicio(int.Parse(id)) != null);
+                bool eliminado = false;
+
+                if (encontrado)
+                {
+                    if (servicio.DeleteTicketServicio(int.Parse(id)))
+                    {
+                        btnLimpiar_Click(sender, e);
+                        lblMensaje.Text = "Eliminación exitosa.";
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "No se pudo eliminar el juego.";
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "No se pudo encontrar el juego.";
+                }
             }
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
 
-            int id = int.Parse(txtId.Text);
+            String id = txtId.Text;
+            String valor = txtValor.Text;
 
 
-            if (id == int.Parse(""))
+            if (id == "" || valor == "")
             {
-                lblMensaje.Text = "Debe ingresar un id.";
+                lblMensaje.Text = "Debe ingresar un ID y un precio.";
             }
 
             else
             {
-                bool success = false;
-
-
-                //este metodo asume que el ID se muestra en el formulario
-                Ticket referencia = new Ticket();
-                referencia.Id = int.Parse(txtId.Text);
-                referencia.BuscarUno();
-
-
-                Ticket tk = new Ticket
+                SvcTickets.ServicioTicketsClient servicio = new SvcTickets.ServicioTicketsClient();
+                
+                if (servicio.UpdateTicketServicio(int.Parse(id), int.Parse(valor)))
                 {
-                    Id = referencia.Id,
-                    Valor = int.Parse(txtValor.Text),
-
-                };
-
-                success = tk.Update();
+                    lblMensaje.Text = "Ticket actualizado.";
+                }
+                else
+                {
+                    lblMensaje.Text = "El ticket no pudo ser actualizado.";
+                }
             }
         }
     }

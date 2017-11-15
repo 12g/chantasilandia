@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="677a1487-9226-45c1-9b34-a2c66a667db4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49451/ServicioTickets.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioTickets.xsd" MetadataType="Schema" ID="20f32741-df65-4b38-be6b-23b4422d4c77" SourceId="1" SourceUrl="http://localhost:49451/ServicioTickets.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioTickets1.xsd" MetadataType="Schema" ID="365cf199-9696-463a-a5ed-2fe365722289" SourceId="1" SourceUrl="http://localhost:49451/ServicioTickets.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioTickets.wsdl" MetadataType="Wsdl" ID="9a4961a7-55f1-4c9f-b316-b3d7ea236d4d" SourceId="1" SourceUrl="http://localhost:49451/ServicioTickets.svc?wsdl" />
+    <MetadataFile FileName="ServicioTickets.disco" MetadataType="Disco" ID="c901c3f2-1a8d-4c4a-81af-0e507ce11a6c" SourceId="1" SourceUrl="http://localhost:49451/ServicioTickets.svc?disco" />
+    <MetadataFile FileName="ServicioTickets2.xsd" MetadataType="Schema" ID="8426344b-33fb-42c0-9495-1a813c7be60e" SourceId="1" SourceUrl="http://localhost:49451/ServicioTickets.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
