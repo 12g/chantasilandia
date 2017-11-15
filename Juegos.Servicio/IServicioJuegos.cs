@@ -13,6 +13,13 @@ namespace Juegos.Servicio
     {
 
         [OperationContract]
+        Juegos.Negocio.Modelo.Juego BuscarUnoJuegoServicio(int id);
+        [OperationContract]
+        Juegos.Negocio.Modelo.Juego BuscarUnoJuegoByNombreServicio(String nombre);
+
+
+
+        [OperationContract]
         bool CrearJuegoCasualServicio(string nombre, bool requiereSupervision, bool poseeCinturon);
 
         [OperationContract]
@@ -22,7 +29,11 @@ namespace Juegos.Servicio
         bool DeleteJuegoCasualServicio(int id);
 
         [OperationContract]
-        bool BuscarUnoJuegoCasualServicio(int id);
+        Juegos.Negocio.Modelo.JuegoCasual BuscarUnoJuegoCasualServicio(int id);
+
+        [OperationContract]
+        Juegos.Negocio.Modelo.JuegoCasual BuscarUnoJuegoCasualByNombreServicio(String nombre);
+
 
 
         [OperationContract]
@@ -35,7 +46,9 @@ namespace Juegos.Servicio
         bool DeleteJuegoExtremoServicio(int id);
 
         [OperationContract]
-        bool BuscarUnoJuegoExtremoServicio(int id);
+        Juegos.Negocio.Modelo.JuegoExtremo BuscarUnoJuegoExtremoServicio(int id);
 
+        [OperationContract]
+        Juegos.Negocio.Modelo.JuegoExtremo BuscarUnoJuegoExtremoByNombreServicio(String nombre);
     }
 }

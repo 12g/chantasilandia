@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{7E49529A-4AB6-4B91-96C5-EA1322A6E30F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04861D87-368B-4CB3-8EC1-1A4055789878} = {04861D87-368B-4CB3-8EC1-1A4055789878}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juegos.DALC", "Juegos.DALC\Juegos.DALC.csproj", "{F2CBF135-D458-41A4-B0BC-97814E9032B7}"
 EndProject

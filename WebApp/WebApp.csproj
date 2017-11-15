@@ -48,6 +48,8 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -66,6 +68,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\SvcJuegos\Service1.disco" />
+    <None Include="Connected Services\SvcJuegos\configuration91.svcinfo" />
+    <None Include="Connected Services\SvcJuegos\configuration.svcinfo" />
+    <None Include="Connected Services\SvcJuegos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="FormMaestroCuentas.aspx" />
     <Content Include="FormMaestroTickets.aspx" />
     <Content Include="FormMantenedorCuentas.aspx" />
@@ -74,8 +83,21 @@
     <Content Include="FormMantenedorTickets.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="MasterPage.Master" />
+    <None Include="Connected Services\SvcJuegos\Service1.wsdl" />
+    <None Include="Connected Services\SvcJuegos\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SvcJuegos\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SvcJuegos\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="Cuentas.xml" />
+    <Content Include="Properties\DataSources\Juegos.Negocio.Modelo.Juego.datasource" />
+    <Content Include="Properties\DataSources\Juegos.Negocio.Modelo.JuegoCasual.datasource" />
+    <Content Include="Properties\DataSources\Juegos.Negocio.Modelo.JuegoExtremo.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,6 +110,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\SvcJuegos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="FormMaestroCuentas.aspx.cs">
       <DependentUpon>FormMaestroCuentas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -154,6 +181,9 @@
       <Project>{6b3fede4-1b14-4277-b05a-0bb7dd256f2d}</Project>
       <Name>Juegos.Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SvcJuegos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49451/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49451/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49451/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Juegos.Negocio.Modelo" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoByNombreServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoByNombreServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoByNombreServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoByNombreServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_CrearJuegoCasualServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearJuegoCasualServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_CrearJuegoCasualServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearJuegoCasualServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_UpdateJuegoCasualServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateJuegoCasualServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_UpdateJuegoCasualServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateJuegoCasualServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_DeleteJuegoCasualServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteJuegoCasualServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_DeleteJuegoCasualServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteJuegoCasualServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoCasualServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoCasualServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoCasualServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoCasualServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoCasualByNombreServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoCasualByNombreServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoCasualByNombreServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoCasualByNombreServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_CrearJuegoExtremoServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearJuegoExtremoServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_CrearJuegoExtremoServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearJuegoExtremoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_UpdateJuegoExtremoServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateJuegoExtremoServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_UpdateJuegoExtremoServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateJuegoExtremoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_DeleteJuegoExtremoServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteJuegoExtremoServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_DeleteJuegoExtremoServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteJuegoExtremoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoExtremoServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoExtremoServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoExtremoServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoExtremoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoExtremoByNombreServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoExtremoByNombreServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJuegos_BuscarUnoJuegoExtremoByNombreServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarUnoJuegoExtremoByNombreServicioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioJuegos">
+    <wsdl:operation name="BuscarUnoJuegoServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoServicio" message="tns:IServicioJuegos_BuscarUnoJuegoServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoServicioResponse" message="tns:IServicioJuegos_BuscarUnoJuegoServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoByNombreServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoByNombreServicio" message="tns:IServicioJuegos_BuscarUnoJuegoByNombreServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoByNombreServicioResponse" message="tns:IServicioJuegos_BuscarUnoJuegoByNombreServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearJuegoCasualServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/CrearJuegoCasualServicio" message="tns:IServicioJuegos_CrearJuegoCasualServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/CrearJuegoCasualServicioResponse" message="tns:IServicioJuegos_CrearJuegoCasualServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateJuegoCasualServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/UpdateJuegoCasualServicio" message="tns:IServicioJuegos_UpdateJuegoCasualServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/UpdateJuegoCasualServicioResponse" message="tns:IServicioJuegos_UpdateJuegoCasualServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteJuegoCasualServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/DeleteJuegoCasualServicio" message="tns:IServicioJuegos_DeleteJuegoCasualServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/DeleteJuegoCasualServicioResponse" message="tns:IServicioJuegos_DeleteJuegoCasualServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoCasualServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoCasualServicio" message="tns:IServicioJuegos_BuscarUnoJuegoCasualServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoCasualServicioResponse" message="tns:IServicioJuegos_BuscarUnoJuegoCasualServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoCasualByNombreServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoCasualByNombreServicio" message="tns:IServicioJuegos_BuscarUnoJuegoCasualByNombreServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoCasualByNombreServicioResponse" message="tns:IServicioJuegos_BuscarUnoJuegoCasualByNombreServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearJuegoExtremoServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/CrearJuegoExtremoServicio" message="tns:IServicioJuegos_CrearJuegoExtremoServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/CrearJuegoExtremoServicioResponse" message="tns:IServicioJuegos_CrearJuegoExtremoServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateJuegoExtremoServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/UpdateJuegoExtremoServicio" message="tns:IServicioJuegos_UpdateJuegoExtremoServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/UpdateJuegoExtremoServicioResponse" message="tns:IServicioJuegos_UpdateJuegoExtremoServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteJuegoExtremoServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/DeleteJuegoExtremoServicio" message="tns:IServicioJuegos_DeleteJuegoExtremoServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/DeleteJuegoExtremoServicioResponse" message="tns:IServicioJuegos_DeleteJuegoExtremoServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoExtremoServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoExtremoServicio" message="tns:IServicioJuegos_BuscarUnoJuegoExtremoServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoExtremoServicioResponse" message="tns:IServicioJuegos_BuscarUnoJuegoExtremoServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoExtremoByNombreServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoExtremoByNombreServicio" message="tns:IServicioJuegos_BuscarUnoJuegoExtremoByNombreServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoExtremoByNombreServicioResponse" message="tns:IServicioJuegos_BuscarUnoJuegoExtremoByNombreServicio_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioJuegos" type="tns:IServicioJuegos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscarUnoJuegoServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoByNombreServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoByNombreServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearJuegoCasualServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/CrearJuegoCasualServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateJuegoCasualServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/UpdateJuegoCasualServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteJuegoCasualServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/DeleteJuegoCasualServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoCasualServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoCasualServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoCasualByNombreServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoCasualByNombreServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearJuegoExtremoServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/CrearJuegoExtremoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateJuegoExtremoServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/UpdateJuegoExtremoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteJuegoExtremoServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/DeleteJuegoExtremoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoExtremoServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoExtremoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarUnoJuegoExtremoByNombreServicio">
+      <soap:operation soapAction="http://tempuri.org/IServicioJuegos/BuscarUnoJuegoExtremoByNombreServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IServicioJuegos" binding="tns:BasicHttpBinding_IServicioJuegos">
+      <soap:address location="http://localhost:49451/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

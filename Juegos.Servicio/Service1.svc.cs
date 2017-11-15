@@ -14,6 +14,42 @@ namespace Juegos.Servicio
     public class Service1 : IServicioJuegos
     {
 
+        public Juego BuscarUnoJuegoServicio(int id)
+        {
+            try
+            {
+                Juego juego = new Juego
+                {
+                    Id = id
+                };
+
+                juego.BuscarUno();
+                return juego;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public Juego BuscarUnoJuegoByNombreServicio(String nombre)
+        {
+            try
+            {
+                Juego juego = new Juego
+                {
+                    Nombre = nombre
+                };
+
+                juego.BuscarUno();
+                return juego;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public bool CrearJuegoCasualServicio(string nombre, bool requiereSupervision, bool poseeCinturon)
         {
             try
@@ -33,7 +69,8 @@ namespace Juegos.Servicio
                 return false;
             }
         }
-        public bool BuscarUnoJuegoCasualServicio(int id)
+
+        public JuegoCasual BuscarUnoJuegoCasualServicio(int id)
         {
             try
             {
@@ -42,11 +79,30 @@ namespace Juegos.Servicio
                     Id = id
                 };
 
-                return juego.BuscarUno();
+                juego.BuscarUno();
+                return juego;
             }
             catch (Exception)
             {
-                return false;
+                return null;
+            }
+        }
+
+        public JuegoCasual BuscarUnoJuegoCasualByNombreServicio(String nombre)
+        {
+            try
+            {
+                JuegoCasual juego = new JuegoCasual
+                {
+                    Nombre = nombre
+                };
+
+                juego.BuscarUno();
+                return juego;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
 
@@ -87,6 +143,8 @@ namespace Juegos.Servicio
                 return false;
             }
         }
+
+
 
         public bool CrearJuegoExtremoServicio(string nombre, int altura, int nivelRiesgo)
         {
@@ -146,7 +204,25 @@ namespace Juegos.Servicio
             }
         }
 
-        public bool BuscarUnoJuegoExtremoServicio(int id)
+        public JuegoExtremo BuscarUnoJuegoExtremoByNombreServicio(String nombre)
+        {
+            try
+            {
+                JuegoExtremo juego = new JuegoExtremo
+                {
+                    Nombre = nombre
+                };
+
+                juego.BuscarUno();
+                return juego;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public JuegoExtremo BuscarUnoJuegoExtremoServicio(int id)
         {
             try
             {
@@ -155,11 +231,12 @@ namespace Juegos.Servicio
                     Id = id
                 };
 
-                return juego.BuscarUno();
+                juego.BuscarUno();
+                return juego;
             }
             catch (Exception)
             {
-                return false;
+                return null;
             }
         }
     }
