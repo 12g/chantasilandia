@@ -65,15 +65,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IServicioCuenta.svc" />
+    <Content Include="ServicioCuenta.svc" />
     <Content Include="ServicioJuegos.svc" />
     <Content Include="ServicioTickets.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IIServicioCuenta.cs" />
-    <Compile Include="IServicioCuenta.svc.cs">
-      <DependentUpon>IServicioCuenta.svc</DependentUpon>
+    <Compile Include="IServicioCuenta.cs" />
+    <Compile Include="ServicioCuenta.svc.cs">
+      <DependentUpon>ServicioCuenta.svc</DependentUpon>
     </Compile>
     <Compile Include="IServicioTickets.cs" />
     <Compile Include="ServicioJuegos.svc.cs">
