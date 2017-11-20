@@ -151,5 +151,29 @@ namespace Juegos.Negocio.Modelo
                 return false;
             }
         }
+
+        public bool Autenticar()
+        {
+            try
+            {
+                var consulta = CommonBC.Modelo.Cuentas.First
+                    (aux => aux.cuentaUsuario == Usuario && aux.cuentaPassword == Contraseña);
+                if (Usuario == consulta.cuentaUsuario)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

@@ -9,15 +9,15 @@ namespace Juegos.Negocio
 {
     public class CommonBC
     {
-        private static masterEntities _modelo;
+        private static ChantasilandiaEntities1  _modelo;
         
-        public static masterEntities Modelo
+        public static ChantasilandiaEntities1 Modelo
         {
             get
             {
-                if (_modelo == null)
+                if (_modelo == null) 
                 {
-                    _modelo = new masterEntities();
+                    _modelo = new ChantasilandiaEntities1();
                 }
                 return _modelo;
             }

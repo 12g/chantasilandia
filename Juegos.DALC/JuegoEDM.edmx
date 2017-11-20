@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ChantasilandiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cuentas">
           <Key>
             <PropertyRef Name="cuentaID" />
@@ -77,7 +77,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="masterModelStoreContainer">
+        <EntityContainer Name="ChantasilandiaModelStoreContainer">
           <EntitySet Name="Cuentas" EntityType="Self.Cuentas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Juegos" EntityType="Self.Juegos" Schema="dbo" store:Type="Tables" />
@@ -93,10 +93,11 @@
             <End Role="JuegosCasuales" EntitySet="JuegosCasuales" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ChantasilandiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Cuentas">
           <Key>
             <PropertyRef Name="cuentaID" />
@@ -121,25 +122,9 @@
           <Property Name="juegoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="juegoNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="juegoTipo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="JuegosExtremos" Relationship="masterModel.FK_JuegoExtremoID" FromRole="Juegos" ToRole="JuegosExtremos" />
-          <NavigationProperty Name="JuegosCasuales" Relationship="masterModel.FK_JuegosCasuales_Juegos" FromRole="Juegos" ToRole="JuegosCasuales" />
+          <NavigationProperty Name="JuegosExtremos" Relationship="Self.FK_JuegoExtremoID" FromRole="Juegos" ToRole="JuegosExtremos" />
+          <NavigationProperty Name="JuegosCasuales" Relationship="Self.FK_JuegosCasuales_Juegos" FromRole="Juegos" ToRole="JuegosCasuales" />
         </EntityType>
-        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" />
-          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
-          <EntitySet Name="Juegos" EntityType="Self.Juegos" />
-          <EntitySet Name="JuegosCasuales" EntityType="masterModel.JuegosCasuales" />
-          <EntitySet Name="JuegosExtremos" EntityType="masterModel.JuegosExtremos" />
-          <EntitySet Name="Tickets" EntityType="masterModel.Tickets" />
-          <AssociationSet Name="FK_JuegoExtremoID" Association="masterModel.FK_JuegoExtremoID">
-            <End Role="Juegos" EntitySet="Juegos" />
-            <End Role="JuegosExtremos" EntitySet="JuegosExtremos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_JuegosCasuales_Juegos" Association="masterModel.FK_JuegosCasuales_Juegos">
-            <End Role="Juegos" EntitySet="Juegos" />
-            <End Role="JuegosCasuales" EntitySet="JuegosCasuales" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="JuegosCasuales">
           <Key>
             <PropertyRef Name="juegoID" />
@@ -147,7 +132,7 @@
           <Property Name="juegoID" Type="Int32" Nullable="false" />
           <Property Name="juegoCasualPoseeCinturon" Type="Boolean" Nullable="false" />
           <Property Name="juegoCasualReqSupervision" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Juegos" Relationship="masterModel.FK_JuegosCasuales_Juegos" FromRole="JuegosCasuales" ToRole="Juegos" />
+          <NavigationProperty Name="Juegos" Relationship="Self.FK_JuegosCasuales_Juegos" FromRole="JuegosCasuales" ToRole="Juegos" />
         </EntityType>
         <EntityType Name="JuegosExtremos">
           <Key>
@@ -156,7 +141,7 @@
           <Property Name="juegoID" Type="Int32" Nullable="false" />
           <Property Name="juegoExtremoNivelRiesgo" Type="Int32" Nullable="false" />
           <Property Name="juegoExtremoAltura" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Juegos" Relationship="masterModel.FK_JuegoExtremoID" FromRole="JuegosExtremos" ToRole="Juegos" />
+          <NavigationProperty Name="Juegos" Relationship="Self.FK_JuegoExtremoID" FromRole="JuegosExtremos" ToRole="Juegos" />
         </EntityType>
         <EntityType Name="Tickets">
           <Key>
@@ -166,8 +151,8 @@
           <Property Name="ticketPrecio" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_JuegoExtremoID">
-          <End Type="masterModel.Juegos" Role="Juegos" Multiplicity="1" />
-          <End Type="masterModel.JuegosExtremos" Role="JuegosExtremos" Multiplicity="0..1" />
+          <End Role="Juegos" Type="Self.Juegos" Multiplicity="1" />
+          <End Role="JuegosExtremos" Type="Self.JuegosExtremos" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Juegos">
               <PropertyRef Name="juegoID" />
@@ -178,8 +163,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JuegosCasuales_Juegos">
-          <End Type="masterModel.Juegos" Role="Juegos" Multiplicity="1" />
-          <End Type="masterModel.JuegosCasuales" Role="JuegosCasuales" Multiplicity="0..1" />
+          <End Role="Juegos" Type="Self.Juegos" Multiplicity="1" />
+          <End Role="JuegosCasuales" Type="Self.JuegosCasuales" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Juegos">
               <PropertyRef Name="juegoID" />
@@ -189,14 +174,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="ChantasilandiaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuentas" EntityType="Self.Cuentas" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Juegos" EntityType="Self.Juegos" />
+          <EntitySet Name="JuegosCasuales" EntityType="Self.JuegosCasuales" />
+          <EntitySet Name="JuegosExtremos" EntityType="Self.JuegosExtremos" />
+          <EntitySet Name="Tickets" EntityType="Self.Tickets" />
+          <AssociationSet Name="FK_JuegoExtremoID" Association="Self.FK_JuegoExtremoID">
+            <End Role="Juegos" EntitySet="Juegos" />
+            <End Role="JuegosExtremos" EntitySet="JuegosExtremos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JuegosCasuales_Juegos" Association="Self.FK_JuegosCasuales_Juegos">
+            <End Role="Juegos" EntitySet="Juegos" />
+            <End Role="JuegosCasuales" EntitySet="JuegosCasuales" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+        <EntityContainerMapping StorageEntityContainer="ChantasilandiaModelStoreContainer" CdmEntityContainer="ChantasilandiaEntities1">
           <EntitySetMapping Name="Cuentas">
-            <EntityTypeMapping TypeName="masterModel.Cuentas">
+            <EntityTypeMapping TypeName="ChantasilandiaModel.Cuentas">
               <MappingFragment StoreEntitySet="Cuentas">
                 <ScalarProperty Name="cuentaID" ColumnName="cuentaID" />
                 <ScalarProperty Name="cuentaUsuario" ColumnName="cuentaUsuario" />
@@ -205,7 +206,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Empleados">
-            <EntityTypeMapping TypeName="masterModel.Empleados">
+            <EntityTypeMapping TypeName="ChantasilandiaModel.Empleados">
               <MappingFragment StoreEntitySet="Empleados">
                 <ScalarProperty Name="empleadoID" ColumnName="empleadoID" />
                 <ScalarProperty Name="empleadoNombre" ColumnName="empleadoNombre" />
@@ -215,37 +216,37 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Juegos">
-            <EntityTypeMapping TypeName="masterModel.Juegos">
+            <EntityTypeMapping TypeName="ChantasilandiaModel.Juegos">
               <MappingFragment StoreEntitySet="Juegos">
                 <ScalarProperty Name="juegoID" ColumnName="juegoID" />
                 <ScalarProperty Name="juegoNombre" ColumnName="juegoNombre" />
                 <ScalarProperty Name="juegoTipo" ColumnName="juegoTipo" />
-                </MappingFragment>
+              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JuegosCasuales">
-            <EntityTypeMapping TypeName="masterModel.JuegosCasuales">
+            <EntityTypeMapping TypeName="ChantasilandiaModel.JuegosCasuales">
               <MappingFragment StoreEntitySet="JuegosCasuales">
-                <ScalarProperty Name="juegoCasualReqSupervision" ColumnName="juegoCasualReqSupervision" />
-                <ScalarProperty Name="juegoCasualPoseeCinturon" ColumnName="juegoCasualPoseeCinturon" />
                 <ScalarProperty Name="juegoID" ColumnName="juegoID" />
+                <ScalarProperty Name="juegoCasualPoseeCinturon" ColumnName="juegoCasualPoseeCinturon" />
+                <ScalarProperty Name="juegoCasualReqSupervision" ColumnName="juegoCasualReqSupervision" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JuegosExtremos">
-            <EntityTypeMapping TypeName="masterModel.JuegosExtremos">
+            <EntityTypeMapping TypeName="ChantasilandiaModel.JuegosExtremos">
               <MappingFragment StoreEntitySet="JuegosExtremos">
-                <ScalarProperty Name="juegoExtremoAltura" ColumnName="juegoExtremoAltura" />
-                <ScalarProperty Name="juegoExtremoNivelRiesgo" ColumnName="juegoExtremoNivelRiesgo" />
                 <ScalarProperty Name="juegoID" ColumnName="juegoID" />
+                <ScalarProperty Name="juegoExtremoNivelRiesgo" ColumnName="juegoExtremoNivelRiesgo" />
+                <ScalarProperty Name="juegoExtremoAltura" ColumnName="juegoExtremoAltura" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tickets">
-            <EntityTypeMapping TypeName="masterModel.Tickets">
+            <EntityTypeMapping TypeName="ChantasilandiaModel.Tickets">
               <MappingFragment StoreEntitySet="Tickets">
-                <ScalarProperty Name="ticketPrecio" ColumnName="ticketPrecio" />
                 <ScalarProperty Name="ticketID" ColumnName="ticketID" />
+                <ScalarProperty Name="ticketPrecio" ColumnName="ticketPrecio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

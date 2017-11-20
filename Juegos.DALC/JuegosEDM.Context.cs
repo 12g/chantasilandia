@@ -13,10 +13,10 @@ namespace Juegos.DALC
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ChantasilandiaEntities1 : DbContext
+    public partial class ChantsiandiaEntities : DbContext
     {
-        public ChantasilandiaEntities1()
-            : base("name=ChantasilandiaEntities1")
+        public ChantsiandiaEntities()
+            : base("name=ChantsiandiaEntities")
         {
         }
     
@@ -25,11 +25,6 @@ namespace Juegos.DALC
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Cuentas> Cuentas { get; set; }
-        public DbSet<Empleados> Empleados { get; set; }
-        public DbSet<Juegos> Juegos { get; set; }
-        public DbSet<JuegosCasuales> JuegosCasuales { get; set; }
-        public DbSet<JuegosExtremos> JuegosExtremos { get; set; }
-        public DbSet<Tickets> Tickets { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

@@ -44,9 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -68,6 +65,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\SvcCuenta\IServicioCuenta.wsdl" />
+    <None Include="Connected Services\SvcCuenta\IServicioCuenta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SvcCuenta\IServicioCuenta1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\SvcJuegos\Service1.disco" />
     <None Include="Connected Services\SvcJuegos\configuration91.svcinfo" />
     <None Include="Connected Services\SvcJuegos\configuration.svcinfo" />
@@ -82,6 +86,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SvcCuenta\IServicioCuenta.disco" />
+    <None Include="Connected Services\SvcCuenta\configuration91.svcinfo" />
+    <None Include="Connected Services\SvcCuenta\configuration.svcinfo" />
+    <None Include="Connected Services\SvcCuenta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="FormMaestroCuentas.aspx" />
     <Content Include="FormMaestroTickets.aspx" />
     <Content Include="FormMantenedorCuentas.aspx" />
@@ -89,6 +100,7 @@
     <Content Include="FormMaestroJuegos.aspx" />
     <Content Include="FormMantenedorTickets.aspx" />
     <Content Include="Inicio.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="Connected Services\SvcJuegos\Service1.wsdl" />
     <None Include="Connected Services\SvcJuegos\Service1.xsd">
@@ -128,6 +140,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\SvcCuenta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\SvcJuegos\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +204,13 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,8 +228,13 @@
       <Project>{6b3fede4-1b14-4277-b05a-0bb7dd256f2d}</Project>
       <Name>Juegos.Negocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Juegos.Servicio\Juegos.Servicio.csproj">
+      <Project>{04861d87-368b-4cb3-8ec1-1a4055789878}</Project>
+      <Name>Juegos.Servicio</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SvcCuenta\" />
     <WCFMetadataStorage Include="Connected Services\SvcJuegos\" />
     <WCFMetadataStorage Include="Connected Services\SvcTickets\" />
   </ItemGroup>
