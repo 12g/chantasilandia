@@ -13,9 +13,11 @@ namespace Juegos.Servicio
     {
        public bool ValidarUsuario(string username, string password)
         {
-            Juegos.Negocio.Modelo.Cuenta c = new Negocio.Modelo.Cuenta();
-            c.Usuario = username;
-            c.Contraseña = password;
+            Juegos.Negocio.Modelo.Cuenta c = new Negocio.Modelo.Cuenta
+            {
+                Usuario = username,
+                Contraseña = password
+            };
 
             return c.Autenticar();
         }

@@ -96,7 +96,6 @@ namespace WebApp
             {
                 SvcTickets.ServicioTicketsClient servicio = new SvcTickets.ServicioTicketsClient();
                 bool encontrado = (servicio.BuscarUnoTicketServicio(int.Parse(id)) != null);
-                bool eliminado = false;
 
                 if (encontrado)
                 {
